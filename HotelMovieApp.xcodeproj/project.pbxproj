@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8BB237883C30065CD2B /* AppDelegate.swift */; };
 		F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8BD237883C30065CD2B /* SceneDelegate.swift */; };
-		F50DA8C0237883C30065CD2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8BF237883C30065CD2B /* ViewController.swift */; };
-		F50DA8C3237883C30065CD2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50DA8C1237883C30065CD2B /* Main.storyboard */; };
 		F50DA8C5237883C70065CD2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F50DA8C4237883C70065CD2B /* Assets.xcassets */; };
 		F50DA8C8237883C70065CD2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50DA8C6237883C70065CD2B /* LaunchScreen.storyboard */; };
 		F50DA8D3237883C70065CD2B /* HotelMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8D2237883C70065CD2B /* HotelMovieAppTests.swift */; };
 		F50DA8DE237883C70065CD2B /* HotelMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8DD237883C70065CD2B /* HotelMovieAppUITests.swift */; };
+		F50DA8F2237886E90065CD2B /* ProfileImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8EF237886E90065CD2B /* ProfileImagePickerController.swift */; };
+		F50DA8F3237886E90065CD2B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F0237886E90065CD2B /* SignUpController.swift */; };
+		F50DA8F4237886E90065CD2B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F1237886E90065CD2B /* LoginController.swift */; };
+		F50DA8F92378874E0065CD2B /* Extension_LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */; };
+		F50DA8FA2378874E0065CD2B /* UIImage+CacheExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */; };
+		F50DA8FB2378874E0065CD2B /* UILabel+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +42,6 @@
 		F50DA8B8237883C30065CD2B /* HotelMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50DA8BB237883C30065CD2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F50DA8BD237883C30065CD2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F50DA8BF237883C30065CD2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F50DA8C2237883C30065CD2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F50DA8C4237883C70065CD2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F50DA8C7237883C70065CD2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F50DA8C9237883C70065CD2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,12 @@
 		F50DA8D9237883C70065CD2B /* HotelMovieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelMovieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50DA8DD237883C70065CD2B /* HotelMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMovieAppUITests.swift; sourceTree = "<group>"; };
 		F50DA8DF237883C70065CD2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F50DA8EF237886E90065CD2B /* ProfileImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImagePickerController.swift; sourceTree = "<group>"; };
+		F50DA8F0237886E90065CD2B /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		F50DA8F1237886E90065CD2B /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_LayoutAnchors.swift; sourceTree = "<group>"; };
+		F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CacheExtension.swift"; sourceTree = "<group>"; };
+		F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+DateExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +109,8 @@
 			children = (
 				F50DA8BB237883C30065CD2B /* AppDelegate.swift */,
 				F50DA8BD237883C30065CD2B /* SceneDelegate.swift */,
-				F50DA8BF237883C30065CD2B /* ViewController.swift */,
-				F50DA8C1237883C30065CD2B /* Main.storyboard */,
+				F50DA8EB237885960065CD2B /* Controllers */,
+				F50DA8F52378871D0065CD2B /* Helpers */,
 				F50DA8C4237883C70065CD2B /* Assets.xcassets */,
 				F50DA8C6237883C70065CD2B /* LaunchScreen.storyboard */,
 				F50DA8C9237883C70065CD2B /* Info.plist */,
@@ -126,6 +134,34 @@
 				F50DA8DF237883C70065CD2B /* Info.plist */,
 			);
 			path = HotelMovieAppUITests;
+			sourceTree = "<group>";
+		};
+		F50DA8EB237885960065CD2B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F50DA8EE237886D50065CD2B /* Authentication */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F50DA8EE237886D50065CD2B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F50DA8F1237886E90065CD2B /* LoginController.swift */,
+				F50DA8EF237886E90065CD2B /* ProfileImagePickerController.swift */,
+				F50DA8F0237886E90065CD2B /* SignUpController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		F50DA8F52378871D0065CD2B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */,
+				F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */,
+				F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +270,6 @@
 			files = (
 				F50DA8C8237883C70065CD2B /* LaunchScreen.storyboard in Resources */,
 				F50DA8C5237883C70065CD2B /* Assets.xcassets in Resources */,
-				F50DA8C3237883C30065CD2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F50DA8C0237883C30065CD2B /* ViewController.swift in Sources */,
+				F50DA8F3237886E90065CD2B /* SignUpController.swift in Sources */,
+				F50DA8F4237886E90065CD2B /* LoginController.swift in Sources */,
+				F50DA8F92378874E0065CD2B /* Extension_LayoutAnchors.swift in Sources */,
+				F50DA8FA2378874E0065CD2B /* UIImage+CacheExtension.swift in Sources */,
+				F50DA8FB2378874E0065CD2B /* UILabel+DateExtension.swift in Sources */,
 				F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */,
 				F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */,
+				F50DA8F2237886E90065CD2B /* ProfileImagePickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F50DA8C1237883C30065CD2B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F50DA8C2237883C30065CD2B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F50DA8C6237883C70065CD2B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

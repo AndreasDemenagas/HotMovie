@@ -89,7 +89,7 @@ class SignUpController: UIViewController {
         b.titleLabel?.textAlignment = .center
         b.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         b.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//        b.addTarget(self, action: #selector(handleRegisterUser), for: .touchUpInside)
+       b.addTarget(self, action: #selector(handleRegisterUser), for: .touchUpInside)
         b.layer.cornerRadius = 20
         b.setTitleColor(.white, for: .normal)
         b.layer.masksToBounds = true
@@ -124,15 +124,15 @@ class SignUpController: UIViewController {
         present(pickerController, animated: true, completion: nil)
     }
     
-//    @objc func handleRegisterUser() {
-//        guard let name = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let image = profileImageView.image else {
-//            return
-//        }
-//
-//        FirebaseService.shared.registerUser(username: name, email: email, password: password, profileImage: image) {
-//            self.dismiss(animated: true, completion: nil)
-//        }
-//    }
+    @objc func handleRegisterUser() {
+        guard let name = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let image = profileImageView.image else {
+            return
+        }
+        
+        FirebaseService.shared.registerUser(username: name, email: email, password: password, profileImage: image) {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     @objc func handleBackToLogin() {
         dismiss(animated: true, completion: nil)

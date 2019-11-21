@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EAC68486B0F8E93D649E72C /* Pods_HotelMovieAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB974C3411637D8E5B13D7C1 /* Pods_HotelMovieAppTests.framework */; };
+		59A95EA32630FE226B6B647B /* Pods_HotelMovieApp_HotelMovieAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AB320D00A0EFB5EAF031F4 /* Pods_HotelMovieApp_HotelMovieAppUITests.framework */; };
+		EDEE00A955824E0F4458AA53 /* Pods_HotelMovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE64F04DA1EA35486F2868 /* Pods_HotelMovieApp.framework */; };
 		F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8BB237883C30065CD2B /* AppDelegate.swift */; };
 		F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8BD237883C30065CD2B /* SceneDelegate.swift */; };
 		F50DA8C5237883C70065CD2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F50DA8C4237883C70065CD2B /* Assets.xcassets */; };
@@ -43,6 +46,8 @@
 		F5F48D9623870B8F004CE6BA /* FullReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D9323870B8F004CE6BA /* FullReviewController.swift */; };
 		F5F48D9A23870BCA004CE6BA /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D9823870BCA004CE6BA /* FirebaseService.swift */; };
 		F5F48D9B23870BCA004CE6BA /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D9923870BCA004CE6BA /* ApiService.swift */; };
+		F5F48D9D23870CCE004CE6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5F48D9C23870CCE004CE6BA /* GoogleService-Info.plist */; };
+		F5F48DA023870EA8004CE6BA /* MovieDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D9F23870EA8004CE6BA /* MovieDetailsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E6358BDFE249A438B67A589 /* Pods-HotelMovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelMovieApp.release.xcconfig"; path = "Target Support Files/Pods-HotelMovieApp/Pods-HotelMovieApp.release.xcconfig"; sourceTree = "<group>"; };
+		977C2E78BA88D5D8FD232A3C /* Pods-HotelMovieAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelMovieAppTests.debug.xcconfig"; path = "Target Support Files/Pods-HotelMovieAppTests/Pods-HotelMovieAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B42533EAE9208DBD4837747F /* Pods-HotelMovieApp-HotelMovieAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelMovieApp-HotelMovieAppUITests.release.xcconfig"; path = "Target Support Files/Pods-HotelMovieApp-HotelMovieAppUITests/Pods-HotelMovieApp-HotelMovieAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BEEE64F04DA1EA35486F2868 /* Pods_HotelMovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelMovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB974C3411637D8E5B13D7C1 /* Pods_HotelMovieAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelMovieAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF1DD1FE1310A5D8DDB50645 /* Pods-HotelMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-HotelMovieApp/Pods-HotelMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DB45440A84F5D05361527E69 /* Pods-HotelMovieApp-HotelMovieAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelMovieApp-HotelMovieAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-HotelMovieApp-HotelMovieAppUITests/Pods-HotelMovieApp-HotelMovieAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5AB320D00A0EFB5EAF031F4 /* Pods_HotelMovieApp_HotelMovieAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelMovieApp_HotelMovieAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14D6161F791F725EA071799 /* Pods-HotelMovieAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelMovieAppTests.release.xcconfig"; path = "Target Support Files/Pods-HotelMovieAppTests/Pods-HotelMovieAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F50DA8B8237883C30065CD2B /* HotelMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50DA8BB237883C30065CD2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F50DA8BD237883C30065CD2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +119,8 @@
 		F5F48D9323870B8F004CE6BA /* FullReviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullReviewController.swift; sourceTree = "<group>"; };
 		F5F48D9823870BCA004CE6BA /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		F5F48D9923870BCA004CE6BA /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		F5F48D9C23870CCE004CE6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5F48D9F23870EA8004CE6BA /* MovieDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDEE00A955824E0F4458AA53 /* Pods_HotelMovieApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EAC68486B0F8E93D649E72C /* Pods_HotelMovieAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +144,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A95EA32630FE226B6B647B /* Pods_HotelMovieApp_HotelMovieAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F3BAC8C4836CEB70EE89218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEEE64F04DA1EA35486F2868 /* Pods_HotelMovieApp.framework */,
+				E5AB320D00A0EFB5EAF031F4 /* Pods_HotelMovieApp_HotelMovieAppUITests.framework */,
+				CB974C3411637D8E5B13D7C1 /* Pods_HotelMovieAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE9AD2B301713C2C12E2700C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF1DD1FE1310A5D8DDB50645 /* Pods-HotelMovieApp.debug.xcconfig */,
+				2E6358BDFE249A438B67A589 /* Pods-HotelMovieApp.release.xcconfig */,
+				DB45440A84F5D05361527E69 /* Pods-HotelMovieApp-HotelMovieAppUITests.debug.xcconfig */,
+				B42533EAE9208DBD4837747F /* Pods-HotelMovieApp-HotelMovieAppUITests.release.xcconfig */,
+				977C2E78BA88D5D8FD232A3C /* Pods-HotelMovieAppTests.debug.xcconfig */,
+				F14D6161F791F725EA071799 /* Pods-HotelMovieAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F50DA8AF237883C30065CD2B = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +181,8 @@
 				F50DA8D1237883C70065CD2B /* HotelMovieAppTests */,
 				F50DA8DC237883C70065CD2B /* HotelMovieAppUITests */,
 				F50DA8B9237883C30065CD2B /* Products */,
+				AE9AD2B301713C2C12E2700C /* Pods */,
+				6F3BAC8C4836CEB70EE89218 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +209,7 @@
 				F50DA8C4237883C70065CD2B /* Assets.xcassets */,
 				F50DA8C6237883C70065CD2B /* LaunchScreen.storyboard */,
 				F50DA8C9237883C70065CD2B /* Info.plist */,
+				F5F48D9C23870CCE004CE6BA /* GoogleService-Info.plist */,
 			);
 			path = HotelMovieApp;
 			sourceTree = "<group>";
@@ -191,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				F5F48D6023870993004CE6BA /* MainTabBarController.swift */,
+				F5F48D9E23870E97004CE6BA /* Details */,
 				F50DA8EE237886D50065CD2B /* Authentication */,
 				F5F48D5D2387095F004CE6BA /* Home */,
 				F5F48D6523870A40004CE6BA /* List  */,
@@ -340,6 +386,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		F5F48D9E23870E97004CE6BA /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				F5F48D9F23870EA8004CE6BA /* MovieDetailsController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -347,9 +401,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F50DA8E2237883C70065CD2B /* Build configuration list for PBXNativeTarget "HotelMovieApp" */;
 			buildPhases = (
+				480531684A004FBA5CD69C6E /* [CP] Check Pods Manifest.lock */,
 				F50DA8B4237883C30065CD2B /* Sources */,
 				F50DA8B5237883C30065CD2B /* Frameworks */,
 				F50DA8B6237883C30065CD2B /* Resources */,
+				BE0825BC9B52915650BE69B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,6 +420,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F50DA8E5237883C70065CD2B /* Build configuration list for PBXNativeTarget "HotelMovieAppTests" */;
 			buildPhases = (
+				FE461207B71C0EEED80A3F94 /* [CP] Check Pods Manifest.lock */,
 				F50DA8CA237883C70065CD2B /* Sources */,
 				F50DA8CB237883C70065CD2B /* Frameworks */,
 				F50DA8CC237883C70065CD2B /* Resources */,
@@ -382,9 +439,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F50DA8E8237883C70065CD2B /* Build configuration list for PBXNativeTarget "HotelMovieAppUITests" */;
 			buildPhases = (
+				F24B39AE767BE3A1737F8BB4 /* [CP] Check Pods Manifest.lock */,
 				F50DA8D5237883C70065CD2B /* Sources */,
 				F50DA8D6237883C70065CD2B /* Frameworks */,
 				F50DA8D7237883C70065CD2B /* Resources */,
+				D1E1ACE59087CFCA3ECFD08D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,6 +505,7 @@
 			files = (
 				F50DA8C8237883C70065CD2B /* LaunchScreen.storyboard in Resources */,
 				F50DA8C5237883C70065CD2B /* Assets.xcassets in Resources */,
+				F5F48D9D23870CCE004CE6BA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +524,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		480531684A004FBA5CD69C6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotelMovieApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE0825BC9B52915650BE69B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelMovieApp/Pods-HotelMovieApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelMovieApp/Pods-HotelMovieApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HotelMovieApp/Pods-HotelMovieApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1E1ACE59087CFCA3ECFD08D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelMovieApp-HotelMovieAppUITests/Pods-HotelMovieApp-HotelMovieAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotelMovieApp-HotelMovieAppUITests/Pods-HotelMovieApp-HotelMovieAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HotelMovieApp-HotelMovieAppUITests/Pods-HotelMovieApp-HotelMovieAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F24B39AE767BE3A1737F8BB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotelMovieApp-HotelMovieAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE461207B71C0EEED80A3F94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotelMovieAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F50DA8B4237883C30065CD2B /* Sources */ = {
@@ -484,6 +647,7 @@
 				F5F48D8C23870B80004CE6BA /* ActorCastCell.swift in Sources */,
 				F50DA8FA2378874E0065CD2B /* UIImage+CacheExtension.swift in Sources */,
 				F5F48D9423870B8F004CE6BA /* ReviewCell.swift in Sources */,
+				F5F48DA023870EA8004CE6BA /* MovieDetailsController.swift in Sources */,
 				F5F48D8023870B08004CE6BA /* HomeMovieCell.swift in Sources */,
 				F5F48D6F23870A97004CE6BA /* HomeModels.swift in Sources */,
 				F5F48D9A23870BCA004CE6BA /* FirebaseService.swift in Sources */,
@@ -664,6 +828,7 @@
 		};
 		F50DA8E3237883C70065CD2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF1DD1FE1310A5D8DDB50645 /* Pods-HotelMovieApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -682,6 +847,7 @@
 		};
 		F50DA8E4237883C70065CD2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E6358BDFE249A438B67A589 /* Pods-HotelMovieApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -700,6 +866,7 @@
 		};
 		F50DA8E6237883C70065CD2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 977C2E78BA88D5D8FD232A3C /* Pods-HotelMovieAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -722,6 +889,7 @@
 		};
 		F50DA8E7237883C70065CD2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14D6161F791F725EA071799 /* Pods-HotelMovieAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -744,6 +912,7 @@
 		};
 		F50DA8E9237883C70065CD2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB45440A84F5D05361527E69 /* Pods-HotelMovieApp-HotelMovieAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -764,6 +933,7 @@
 		};
 		F50DA8EA237883C70065CD2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42533EAE9208DBD4837747F /* Pods-HotelMovieApp-HotelMovieAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

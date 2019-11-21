@@ -62,7 +62,7 @@ class LoginController: UIViewController {
         b.layer.borderWidth = 1
         b.layer.borderColor = UIColor.white.cgColor
         b.setTitleColor(.white, for: .normal)
-//        b.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        b.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         b.translatesAutoresizingMaskIntoConstraints = false
         b.layer.masksToBounds = true
         return b
@@ -103,12 +103,12 @@ class LoginController: UIViewController {
         setupLabels()
     }
     
-//    @objc func handleLogin() {
-//        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-//        FirebaseService.shared.loginUser(email: email, password: password) {
-//            self.dismiss(animated: true, completion: nil)
-//        }
-//    }
+    @objc func handleLogin() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        FirebaseService.shared.loginUser(email: email, password: password) {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     @objc func handlePresentSignUp() {
         let signUpController = SignUpController()

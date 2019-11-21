@@ -6,7 +6,8 @@
 //  Copyright © 2019 Andrew Demenagas. All rights reserved.
 //
 
-import UIKit 
+import UIKit
+import Firebase
 
 class ListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     

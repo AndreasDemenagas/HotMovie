@@ -19,6 +19,9 @@
 		F50DA8F92378874E0065CD2B /* Extension_LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */; };
 		F50DA8FA2378874E0065CD2B /* UIImage+CacheExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */; };
 		F50DA8FB2378874E0065CD2B /* UILabel+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */; };
+		F5F48D5F2387097F004CE6BA /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D5E2387097F004CE6BA /* HomeController.swift */; };
+		F5F48D6123870993004CE6BA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D6023870993004CE6BA /* MainTabBarController.swift */; };
+		F5F48D64238709D9004CE6BA /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D63238709D9004CE6BA /* SearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_LayoutAnchors.swift; sourceTree = "<group>"; };
 		F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CacheExtension.swift"; sourceTree = "<group>"; };
 		F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+DateExtension.swift"; sourceTree = "<group>"; };
+		F5F48D5E2387097F004CE6BA /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F5F48D6023870993004CE6BA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F5F48D63238709D9004CE6BA /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,9 @@
 		F50DA8EB237885960065CD2B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F5F48D6023870993004CE6BA /* MainTabBarController.swift */,
+				F5F48D5D2387095F004CE6BA /* Home */,
+				F5F48D62238709C4004CE6BA /* Search */,
 				F50DA8EE237886D50065CD2B /* Authentication */,
 			);
 			path = Controllers;
@@ -162,6 +171,22 @@
 				F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F5F48D5D2387095F004CE6BA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F5F48D5E2387097F004CE6BA /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F5F48D62238709C4004CE6BA /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F5F48D63238709D9004CE6BA /* SearchController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,9 +322,12 @@
 				F50DA8F3237886E90065CD2B /* SignUpController.swift in Sources */,
 				F50DA8F4237886E90065CD2B /* LoginController.swift in Sources */,
 				F50DA8F92378874E0065CD2B /* Extension_LayoutAnchors.swift in Sources */,
+				F5F48D6123870993004CE6BA /* MainTabBarController.swift in Sources */,
 				F50DA8FA2378874E0065CD2B /* UIImage+CacheExtension.swift in Sources */,
 				F50DA8FB2378874E0065CD2B /* UILabel+DateExtension.swift in Sources */,
+				F5F48D5F2387097F004CE6BA /* HomeController.swift in Sources */,
 				F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */,
+				F5F48D64238709D9004CE6BA /* SearchController.swift in Sources */,
 				F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */,
 				F50DA8F2237886E90065CD2B /* ProfileImagePickerController.swift in Sources */,
 			);

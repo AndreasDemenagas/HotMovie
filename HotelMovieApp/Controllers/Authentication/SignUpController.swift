@@ -64,6 +64,7 @@ class SignUpController: UIViewController {
         tf.layer.borderWidth = 1
         tf.tintColor = .white
         tf.textColor = .white
+        tf.isSecureTextEntry = true 
         tf.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         tf.layer.borderColor = UIColor.lightGray.cgColor
         tf.font = UIFont.systemFont(ofSize: 18)

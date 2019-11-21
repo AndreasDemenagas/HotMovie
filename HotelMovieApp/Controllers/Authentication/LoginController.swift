@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  socialLoginSignupPage
+//  LoginController.swift
+//  HotelMovieApp
 //
-//  Created by Andreas Demenagas on 5/2/19.
+//  Created by Andreas Demenagas on 9/4/19.
 //  Copyright © 2019 Andreas Demenagas. All rights reserved.
 //
 
@@ -45,6 +45,7 @@ class LoginController: UIViewController {
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
         tf.tintColor = .white
+        tf.isSecureTextEntry = true 
         tf.textColor = .white
         tf.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         tf.translatesAutoresizingMaskIntoConstraints = false

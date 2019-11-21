@@ -21,7 +21,7 @@ class DetailsFooter: UICollectionReusableView {
     }()
     
     lazy var addButton: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "plusList").withRenderingMode(.alwaysTemplate))
+        let imgView = UIImageView(image: #imageLiteral(resourceName: "photoPlusButton").withRenderingMode(.alwaysTemplate))
         imgView.contentMode = .scaleAspectFit
         imgView.tintColor = .white
         imgView.translatesAutoresizingMaskIntoConstraints = false

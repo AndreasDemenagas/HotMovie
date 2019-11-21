@@ -18,7 +18,7 @@ class MovieSearchCell: UICollectionViewCell {
     }()
     
     let posterImageView: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "samplePosterTFA copy"))
+        let imgView = UIImageView(image: #imageLiteral(resourceName: "mad-max-poster"))
         imgView.contentMode = .scaleAspectFill
         imgView.layer.cornerRadius = 20
         imgView.layer.borderColor = UIColor(white: 1, alpha: 0.6).cgColor

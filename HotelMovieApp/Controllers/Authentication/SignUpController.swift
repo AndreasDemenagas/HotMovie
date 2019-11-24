@@ -125,6 +125,7 @@ class SignUpController: UIViewController {
     }
     
     @objc func handleRegisterUser() {
+        // TODO: Alerts
         guard let name = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let image = profileImageView.image else {
             return
         }

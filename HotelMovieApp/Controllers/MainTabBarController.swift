@@ -18,6 +18,8 @@ class MainTabBarController: UITabBarController {
         tabBar.barStyle = .black
         tabBar.tintColor = .white
         
+        setNeedsStatusBarAppearanceUpdate()
+        
         let searchController = navigationController(viewController: SearchController(collectionViewLayout: UICollectionViewFlowLayout()), imageName: "search", title: "Search")
         let homeController = navigationController(viewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()), imageName: "home", title: "Home")
         let listController = navigationController(viewController: ListController(collectionViewLayout: UICollectionViewFlowLayout()), imageName: "list", title: "My List")
@@ -34,5 +36,9 @@ class MainTabBarController: UITabBarController {
         navigationController.tabBarItem.title = title
         navigationController.tabBarItem.image = UIImage(named: imageName)
         return navigationController
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

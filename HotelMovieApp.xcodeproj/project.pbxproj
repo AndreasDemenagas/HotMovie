@@ -22,6 +22,7 @@
 		F50DA8F92378874E0065CD2B /* Extension_LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */; };
 		F50DA8FA2378874E0065CD2B /* UIImage+CacheExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */; };
 		F50DA8FB2378874E0065CD2B /* UILabel+DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */; };
+		F59E14B5238AE70D007422C8 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59E14B4238AE70D007422C8 /* Validator.swift */; };
 		F5F48D6123870993004CE6BA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D6023870993004CE6BA /* MainTabBarController.swift */; };
 		F5F48D64238709D9004CE6BA /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D63238709D9004CE6BA /* SearchController.swift */; };
 		F5F48D6723870A56004CE6BA /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D6623870A56004CE6BA /* ListController.swift */; };
@@ -95,6 +96,7 @@
 		F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_LayoutAnchors.swift; sourceTree = "<group>"; };
 		F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CacheExtension.swift"; sourceTree = "<group>"; };
 		F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+DateExtension.swift"; sourceTree = "<group>"; };
+		F59E14B4238AE70D007422C8 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		F5F48D6023870993004CE6BA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F5F48D63238709D9004CE6BA /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F5F48D6623870A56004CE6BA /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */,
 				F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */,
 				F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */,
+				F59E14B4238AE70D007422C8 /* Validator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				F50DA8F92378874E0065CD2B /* Extension_LayoutAnchors.swift in Sources */,
 				F5F48D6123870993004CE6BA /* MainTabBarController.swift in Sources */,
 				F5F48D8C23870B80004CE6BA /* ActorCastCell.swift in Sources */,
+				F59E14B5238AE70D007422C8 /* Validator.swift in Sources */,
 				F50DA8FA2378874E0065CD2B /* UIImage+CacheExtension.swift in Sources */,
 				F5F48D9423870B8F004CE6BA /* ReviewCell.swift in Sources */,
 				F5F48DA023870EA8004CE6BA /* MovieDetailsController.swift in Sources */,

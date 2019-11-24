@@ -129,9 +129,23 @@ class SignUpController: UIViewController {
             return
         }
         
-        FirebaseService.shared.registerUser(username: name, email: email, password: password, profileImage: image) {
-            self.dismiss(animated: true, completion: nil)
+        if name == "" {
+            print("bad name")
+            return
         }
+        
+        if Validator.shared.isValidEmail(input: email) {
+            if Validator.shared.isValidPassword(input: password) {
+                FirebaseService.shared.registerUser(username: name, email: email, password: password, profileImage: image) {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            } else {
+                print("bad password")
+            }
+        } else {
+            print("bad email")
+        }
+
     }
     
     @objc func handleBackToLogin() {

@@ -6,8 +6,6 @@
 //  Copyright © 2019 Andrew Demenagas. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 class MainTabBarController: UITabBarController {
@@ -17,8 +15,6 @@ class MainTabBarController: UITabBarController {
         
         tabBar.barStyle = .black
         tabBar.tintColor = .white
-        
-        setNeedsStatusBarAppearanceUpdate()
         
         let searchController = navigationController(viewController: SearchController(collectionViewLayout: UICollectionViewFlowLayout()), imageName: "search", title: "Search")
         let homeController = navigationController(viewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()), imageName: "home", title: "Home")
@@ -38,7 +34,4 @@ class MainTabBarController: UITabBarController {
         return navigationController
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 }

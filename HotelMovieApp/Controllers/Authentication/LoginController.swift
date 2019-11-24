@@ -105,9 +105,21 @@ class LoginController: UIViewController {
     
     @objc func handleLogin() {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        FirebaseService.shared.loginUser(email: email, password: password) {
-            self.dismiss(animated: true, completion: nil)
+        
+        if Validator.shared.isValidEmail(input: email) {
+            if Validator.shared.isValidPassword(input: password) {
+                FirebaseService.shared.loginUser(email: email, password: password) {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+            else {
+                print("bad password")
+            }
         }
+        else {
+            print("bad email")
+        }
+        
     }
     
     @objc func handlePresentSignUp() {

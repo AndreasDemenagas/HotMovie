@@ -37,8 +37,9 @@ class MovieDetailsCell: UICollectionViewCell {
     
     let plotLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order."
+        //lbl.text = "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order."
         lbl.font = UIFont.systemFont(ofSize: 18)
+        
         lbl.textColor = .white
         lbl.adjustsFontSizeToFitWidth = true
         lbl.numberOfLines = 0
@@ -56,7 +57,7 @@ class MovieDetailsCell: UICollectionViewCell {
             guard let movie = movie else { return }
             movieTitleLabel.text = movie.title
             releasedLabel.formatAndShowDate(dateString: movie.release_date, formatString: "MMMM dd, yyyy")
-            plotLabel.text = movie.overview
+            plotLabel.attributedText = createPlotString(string: movie.overview ?? "")
             ratingLabel.text = "Rating: \(movie.vote_average ?? 0.0)/10"
         }
     }
@@ -69,6 +70,13 @@ class MovieDetailsCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    fileprivate func createPlotString(string: String) -> NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(string: string, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)])
+        attributedString.append(NSAttributedString(string: " \n \nWatch Trailer", attributes: [NSAttributedString.Key.foregroundColor: UIColor.green, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)]))
+        
+        return attributedString
     }
     
     fileprivate func setupCell() {

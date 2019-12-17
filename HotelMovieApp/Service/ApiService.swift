@@ -18,6 +18,14 @@ class ApiService {
         fetchGenericData(urlString: urlString, completion: completion)
     }
     
+    func fetchTopRated(completion: @escaping (Result<TopRatedMovies, Error>) -> () ) {
+        
+        let urlString = "https://api.themoviedb.org/3/movie/top_rated?api_key=8708e6e442f4c7d558ae6aa51d79152b&region=US"
+        
+        fetchGenericData(urlString: urlString, completion: completion)
+        
+    }
+    
     func fetchPopular(completion: @escaping (Result<PopularMovies, Error>) -> () ) {
         
         let urlString = "https://api.themoviedb.org/3/movie/popular?api_key=8708e6e442f4c7d558ae6aa51d79152b&region=US"

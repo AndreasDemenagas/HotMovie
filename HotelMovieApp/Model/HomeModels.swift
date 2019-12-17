@@ -19,3 +19,7 @@ struct PopularMovies: Decodable {
 struct NowPlayingMovies: Decodable {
     let results: [Movie]?
 }
+
+struct TopRatedMovies: Decodable {
+    let results: [Movie]?
+}

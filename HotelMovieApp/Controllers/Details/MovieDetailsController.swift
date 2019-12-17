@@ -92,6 +92,7 @@ class MovieDetailsController: UICollectionViewController, UICollectionViewDelega
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: detailsCellid, for: indexPath) as! MovieDetailsCell
             cell.movie = movie
+            cell.movieDetailsController = self 
             return cell
         }
         

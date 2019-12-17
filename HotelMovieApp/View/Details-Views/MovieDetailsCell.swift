@@ -61,8 +61,11 @@ class MovieDetailsCell: UICollectionViewCell {
         return btn
     }()
     
+    var movieDetailsController: MovieDetailsController?
+    
     @objc func handleShowTrailers() {
-        print("showing trailers...")
+        let movieTrailersController = MovieTrailersController()
+        movieDetailsController?.present(movieTrailersController, animated: true, completion: nil)
     }
     
     var movie: Movie? {

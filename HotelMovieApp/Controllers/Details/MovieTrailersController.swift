@@ -27,7 +27,7 @@ class MovieTrailersController: UITableViewController {
         
         view.backgroundColor = .black
         
-        tableView.allowsSelection = false 
+        tableView.allowsSelection = false
         tableView.register(MovieTrailerCell.self, forCellReuseIdentifier: trailerCellid)
     }
     
@@ -56,6 +56,7 @@ class MovieTrailersController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: trailerCellid) as! MovieTrailerCell
         cell.video = movieVideos?[indexPath.row]
+        cell.movieTrailersController = self
         return cell
     }
     

@@ -7,26 +7,27 @@
 //
 
 import UIKit
+import WebKit
 
 class MovieTrailerCell: UITableViewCell {
     
-    let thumbnailImageView = UIImageView()
     let lineView = UIView()
-    
-    let playButton: UIImageView = {
-        let iv = UIImageView(image: UIImage(named: "play-button"))
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        return iv
+    let webView: WKWebView = {
+        let wv = WKWebView()
+        return wv
     }()
     
     var video: MovieVideo? {
         didSet {
-            let urlString = "https://i1.ytimg.com/vi/\(video?.key ?? "")/maxresdefault.jpg"
-            
-            
-            thumbnailImageView.loadImageFromCacheOrDownload(urlString: urlString)
+            guard let videoKey = video?.key else { return }
+            let urlString = "https://www.youtube.com/embed/\(videoKey)"
+            guard let url = URL(string: urlString) else { return }
+            let request  = URLRequest(url: url)
+            webView.load(request)
         }
     }
+    
+    var movieTrailersController: MovieTrailersController?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,17 +35,11 @@ class MovieTrailerCell: UITableViewCell {
         backgroundColor = .black
         lineView.backgroundColor = .darkGray
         
+        addSubview(webView)
+        webView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 15, left: 0, bottom: 15, right: 0))
+        
         addSubview(lineView)
         lineView.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: .zero, height: 1))
-
-        addSubview(thumbnailImageView)
-        thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 15, left: 0, bottom: 15, right: 0))
-        
-        addSubview(playButton)
-        playButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        playButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        playButton.centerYAnchor.constraint(equalTo: thumbnailImageView.centerYAnchor).isActive = true
-        playButton.centerXAnchor.constraint(equalTo: thumbnailImageView.centerXAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {

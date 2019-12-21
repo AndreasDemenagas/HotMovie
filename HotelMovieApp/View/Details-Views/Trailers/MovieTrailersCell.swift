@@ -10,10 +10,16 @@ import UIKit
 
 class MovieTrailerCell: UITableViewCell {
     
+    let greeView = UIView()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .red 
+        backgroundColor = .red
+        
+        greeView.backgroundColor = .green
+        addSubview(greeView)
+        greeView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 25, left: 0, bottom: 25, right: 0))
     }
     
     required init?(coder: NSCoder) {

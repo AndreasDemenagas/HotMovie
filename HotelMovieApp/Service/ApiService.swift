@@ -12,6 +12,14 @@ class ApiService {
     
     static let shared = ApiService()
     
+    
+    func fetchMovieVideos(id: Int, completion: @escaping (Result<VideoResponse, Error>) -> () ) {
+        
+        let urlString = "https://api.themoviedb.org/3/movie/\(id)/videos?api_key=8708e6e442f4c7d558ae6aa51d79152b"
+        
+        fetchGenericData(urlString: urlString, completion: completion)
+    }
+    
     func fetchMovieDetails(id: Int, completion: @escaping (Result<Movie, Error>) -> () ) {
         let urlString = "https://api.themoviedb.org/3/movie/\(id)?api_key=8708e6e442f4c7d558ae6aa51d79152b"
         

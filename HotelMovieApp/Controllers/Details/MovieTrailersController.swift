@@ -12,13 +12,19 @@ class MovieTrailersController: UITableViewController {
     
     fileprivate let trailerCellid = "trailercellid"
     
+    var movie: Movie? {
+        didSet {
+            print(movie?.id ?? "NIL NOVIE" )
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(MovieTrailerCell.self, forCellReuseIdentifier: trailerCellid)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.width / 1.777777
+        return view.frame.width / 1.777777 + 50
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

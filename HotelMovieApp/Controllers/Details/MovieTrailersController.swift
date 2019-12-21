@@ -12,9 +12,13 @@ class MovieTrailersController: UITableViewController {
     
     fileprivate let trailerCellid = "trailercellid"
     
+    var movieVideos: [MovieVideo]?
+    
     var movie: Movie? {
         didSet {
             print(movie?.id ?? "NIL NOVIE" )
+            guard let id = movie?.id else { return }
+            fetchVideos(movieId: id)
         }
     }
     
@@ -23,6 +27,25 @@ class MovieTrailersController: UITableViewController {
         tableView.register(MovieTrailerCell.self, forCellReuseIdentifier: trailerCellid)
     }
     
+    func fetchVideos(movieId: Int) {
+        ApiService.shared.fetchMovieVideos(id: movieId) { (response) in
+            switch response {
+            case .failure(let error):
+                print("error in video download", error)
+            case .success(let res):
+                print(res.results ?? [])
+                self.filterMovieVideos(videos: res.results ?? [])
+            }
+        }
+    }
+    
+    func filterMovieVideos(videos: [MovieVideo]) {
+        movieVideos = videos.filter({ (video) -> Bool in
+            video.site == "YouTube" && (video.type == "Trailer" || video.type == "Teaser")
+        })
+        tableView.reloadData()
+    }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.frame.width / 1.777777 + 50
     }
@@ -33,7 +56,7 @@ class MovieTrailersController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return movieVideos?.count ?? 0 
     }
     
 }

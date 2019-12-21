@@ -19,7 +19,7 @@ struct MovieVideo: Decodable {
 
 
 struct VideoResponse: Decodable {
-    let id: String
+    let id: Int
     let results: [MovieVideo]?
 }
 

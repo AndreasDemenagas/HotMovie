@@ -24,6 +24,10 @@ class MovieTrailersController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .black
+        
+        tableView.allowsSelection = false 
         tableView.register(MovieTrailerCell.self, forCellReuseIdentifier: trailerCellid)
     }
     
@@ -33,7 +37,6 @@ class MovieTrailersController: UITableViewController {
             case .failure(let error):
                 print("error in video download", error)
             case .success(let res):
-                print(res.results ?? [])
                 self.filterMovieVideos(videos: res.results ?? [])
             }
         }
@@ -47,11 +50,12 @@ class MovieTrailersController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.width / 1.777777 + 50
+        return view.frame.width / 1.777777 + 30
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: trailerCellid) as! MovieTrailerCell
+        cell.video = movieVideos?[indexPath.row]
         return cell
     }
     

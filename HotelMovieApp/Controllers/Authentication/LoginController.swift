@@ -117,7 +117,7 @@ class LoginController: UIViewController {
             }
         }
         else {
-            print("bad email")
+            Alert.shared.invalidEmailAlert(on: self)
         }
         
     }

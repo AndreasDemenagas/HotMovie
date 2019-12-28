@@ -131,6 +131,7 @@ class SignUpController: UIViewController {
         }
         
         if name == "" {
+            Alert.shared.emptyNameLabel(on: self)
             print("bad name")
             return
         }
@@ -141,10 +142,10 @@ class SignUpController: UIViewController {
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {
-                print("bad password")
+                Alert.shared.invalidPassword(on: self)
             }
         } else {
-            print("bad email")
+            Alert.shared.invalidEmailAlert(on: self)
         }
 
     }

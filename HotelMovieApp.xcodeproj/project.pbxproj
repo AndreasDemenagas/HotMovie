@@ -26,6 +26,7 @@
 		F56748BB23A9438E00054C74 /* MovieTrailersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56748BA23A9438D00054C74 /* MovieTrailersController.swift */; };
 		F56748BD23A943CA00054C74 /* MovieTrailersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56748BC23A943CA00054C74 /* MovieTrailersCell.swift */; };
 		F59E14B5238AE70D007422C8 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59E14B4238AE70D007422C8 /* Validator.swift */; };
+		F5D9D8DC23B7C6CE0026660A /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9D8DB23B7C6CE0026660A /* Alerts.swift */; };
 		F5F48D6123870993004CE6BA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D6023870993004CE6BA /* MainTabBarController.swift */; };
 		F5F48D64238709D9004CE6BA /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D63238709D9004CE6BA /* SearchController.swift */; };
 		F5F48D6723870A56004CE6BA /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F48D6623870A56004CE6BA /* ListController.swift */; };
@@ -103,6 +104,7 @@
 		F56748BA23A9438D00054C74 /* MovieTrailersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailersController.swift; sourceTree = "<group>"; };
 		F56748BC23A943CA00054C74 /* MovieTrailersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailersCell.swift; sourceTree = "<group>"; };
 		F59E14B4238AE70D007422C8 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		F5D9D8DB23B7C6CE0026660A /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		F5F48D6023870993004CE6BA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F5F48D63238709D9004CE6BA /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F5F48D6623870A56004CE6BA /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */,
 				F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */,
 				F59E14B4238AE70D007422C8 /* Validator.swift */,
+				F5D9D8DB23B7C6CE0026660A /* Alerts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				F5F48D6F23870A97004CE6BA /* HomeModels.swift in Sources */,
 				F56748BB23A9438E00054C74 /* MovieTrailersController.swift in Sources */,
 				F5F48D9A23870BCA004CE6BA /* FirebaseService.swift in Sources */,
+				F5D9D8DC23B7C6CE0026660A /* Alerts.swift in Sources */,
 				F56748BD23A943CA00054C74 /* MovieTrailersCell.swift in Sources */,
 				F5F48D8123870B08004CE6BA /* HomeControllerCell.swift in Sources */,
 				F50DA8FB2378874E0065CD2B /* UILabel+DateExtension.swift in Sources */,

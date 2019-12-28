@@ -268,11 +268,9 @@
 		F50DA8F52378871D0065CD2B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */,
-				F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */,
-				F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */,
 				F59E14B4238AE70D007422C8 /* Validator.swift */,
 				F5D9D8DB23B7C6CE0026660A /* Alerts.swift */,
+				F5D9D8DE23B7D0D40026660A /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -283,6 +281,16 @@
 				F56748BC23A943CA00054C74 /* MovieTrailersCell.swift */,
 			);
 			path = Trailers;
+			sourceTree = "<group>";
+		};
+		F5D9D8DE23B7D0D40026660A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F50DA8F82378874E0065CD2B /* UILabel+DateExtension.swift */,
+				F50DA8F62378874D0065CD2B /* Extension_LayoutAnchors.swift */,
+				F50DA8F72378874D0065CD2B /* UIImage+CacheExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F5F48D5D2387095F004CE6BA /* Home */ = {

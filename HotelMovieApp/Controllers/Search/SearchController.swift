@@ -112,9 +112,4 @@ class SearchController: UICollectionViewController, UICollectionViewDelegateFlow
         return .init(width: view.frame.width, height: 150)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
-
 }

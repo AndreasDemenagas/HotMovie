@@ -108,12 +108,18 @@ class LoginController: UIViewController {
         
         if Validator.shared.isValidEmail(input: email) {
             if Validator.shared.isValidPassword(input: password) {
-                FirebaseService.shared.loginUser(email: email, password: password) {
+                FirebaseService.shared.loginUser(email: email, password: password) { error in
+                    
+                    if error != nil {
+                        Alert.shared.loginError(on: self)
+                        return
+                    }
+                    
                     self.dismiss(animated: true, completion: nil)
                 }
             }
             else {
-                print("bad password")
+                Alert.shared.emptyPasswordField(on: self)
             }
         }
         else {

@@ -138,7 +138,13 @@ class SignUpController: UIViewController {
         
         if Validator.shared.isValidEmail(input: email) {
             if Validator.shared.isValidPassword(input: password) {
-                FirebaseService.shared.registerUser(username: name, email: email, password: password, profileImage: image) {
+                FirebaseService.shared.registerUser(username: name, email: email, password: password, profileImage: image) { error in
+                    
+                    if error != nil {
+                        Alert.shared.unexpectedError(on: self)
+                        return
+                    }
+                    
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {

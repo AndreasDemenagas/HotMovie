@@ -70,23 +70,25 @@ class FirebaseService {
         }
     }
     
-    func loginUser(email: String, password: String, completion: @escaping () -> () ) {
+    func loginUser(email: String, password: String, completion: @escaping (Error?) -> () ) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 print("log in error, ", error)
+                completion(error)
                 return
             }
             
             print("logged in...")
-            completion()
+            completion(nil)
         }
     }
     
-    func registerUser(username: String, email: String, password: String, profileImage: UIImage, completion: @escaping () -> () ) {
+    func registerUser(username: String, email: String, password: String, profileImage: UIImage, completion: @escaping (Error?) -> () ) {
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             
             if let error = error {
+                completion(error)
                 print("register error, ", error)
                 return
             }
@@ -98,14 +100,18 @@ class FirebaseService {
             guard let imageData = profileImage.jpegData(compressionQuality: 0.1) else { return }
             
             storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+                
                 if let error = error {
                     print("upload image error, ", error)
+                    completion(error)
                     return
                 }
+                
                 print("image uploaded good....")
                 storageRef.downloadURL { (url, error) in
                     if let error = error {
                         print("url down error, ", error)
+                        completion(error)
                         return
                     }
                     
@@ -120,17 +126,18 @@ class FirebaseService {
         
     }
     
-    func registerUserToDatabase(userId: String, values: [String: Any], completion: @escaping () -> () ) {
+    func registerUserToDatabase(userId: String, values: [String: Any], completion: @escaping (Error?) -> () ) {
         print("register to db....")
         let reference = Database.database().reference().child("users").child(userId)
         
         reference.updateChildValues(values) { (error, reference) in
             if let error = error {
+                completion(error)
                 print("register to database error, ", error)
                 return
             }
             
-            completion()
+            completion(nil)
         }
     }
     

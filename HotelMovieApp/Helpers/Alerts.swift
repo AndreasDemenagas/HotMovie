@@ -29,8 +29,20 @@ class Alert {
         basicAlert(on: viewController, title: "Empty Name", message: "Please enter a username")
     }
     
+    func emptyPasswordField(on vc: UIViewController) {
+        basicAlert(on: vc, title: "Empty Password", message: "Please enter your password")
+    }
+    
     func invalidPassword(on viewController: UIViewController) {
         basicAlert(on: viewController, title: "Invalid Password", message: "Please make sure your password is at least 6 characters long")
+    }
+    
+    func loginError(on viewController: UIViewController) {
+        basicAlert(on: viewController, title: "Login Error", message: "The password you have entered is not correct")
+    }
+    
+    func unexpectedError(on viewController: UIViewController) {
+        basicAlert(on: viewController, title: "Unexpected error", message: "There has been an error. Please try again in a few minutes...")
     }
     
 }

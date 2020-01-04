@@ -25,10 +25,23 @@ class MovieTrailersController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .black
+        view.backgroundColor = UIColor(white: 0, alpha: 0.95)
+        navigationController?.navigationBar.prefersLargeTitles = true 
+        navigationItem.title = "Trailers"
+        
+        setupNavigationBar()
         
         tableView.allowsSelection = false
         tableView.register(MovieTrailerCell.self, forCellReuseIdentifier: trailerCellid)
+    }
+    
+    fileprivate func setupNavigationBar() {
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.tintColor = .white
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
     }
     
     func fetchVideos(movieId: Int) {
@@ -56,7 +69,6 @@ class MovieTrailersController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: trailerCellid) as! MovieTrailerCell
         cell.video = movieVideos?[indexPath.row]
-        cell.movieTrailersController = self
         return cell
     }
     

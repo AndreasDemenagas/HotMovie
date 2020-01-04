@@ -66,7 +66,7 @@ class MovieDetailsCell: UICollectionViewCell {
     @objc func handleShowTrailers() {
         let movieTrailersController = MovieTrailersController()
         movieTrailersController.movie = movie
-        movieDetailsController?.present(movieTrailersController, animated: true, completion: nil)
+        movieDetailsController?.present(UINavigationController(rootViewController: movieTrailersController), animated: true, completion: nil)
     }
     
     var movie: Movie? {

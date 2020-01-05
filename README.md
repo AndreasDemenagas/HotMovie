@@ -30,3 +30,13 @@ Simple iOS application for Hotel Movie Rental Services. Built using Swift, Googl
     <img src="Screens/trailers-screen.png" width=276 />
 </p>
 
+
+## Running Source Code  
+
+1. Make sure Xcode 11.x is installed in your machine 
+1. Install cocoapods from [here.](https://cocoapods.org/)
+1. Clone the repository 
+1. Run `pod install` on main directory
+1. Open xcworkspace file 
+1. Build and run from Xcode on simulator
+

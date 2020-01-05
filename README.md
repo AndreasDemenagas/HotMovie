@@ -23,6 +23,6 @@ Simple iOS application for Hotel Movie Rental Services. Built using Swift, Googl
 ## Search Screen 
 
 <p align="center">
-    <img src="Screens/search-screen.png" width=276 />
+    <img src="Screens/search-screen.png" width=414 />
 </p>
 

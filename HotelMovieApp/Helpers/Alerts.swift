@@ -30,7 +30,7 @@ class Alert {
     }
     
     func emptyPasswordField(on vc: UIViewController) {
-        basicAlert(on: vc, title: "Empty Password", message: "Please enter your password")
+        basicAlert(on: vc, title: "Empty Password", message: "Make sure your password is at least 6 characters long")
     }
     
     func invalidPassword(on viewController: UIViewController) {
@@ -43,6 +43,17 @@ class Alert {
     
     func unexpectedError(on viewController: UIViewController) {
         basicAlert(on: viewController, title: "Unexpected error", message: "There has been an error. Please try again in a few minutes...")
+    }
+    
+    func signOutConfirm(on viewController: UIViewController, completion: @escaping (UIAlertAction) -> () ) {
+        let alertController = UIAlertController(title: "Warning", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: completion)
+        let confirmAction = UIAlertAction(title: "Log out", style: .default, handler: completion)
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        viewController.present(alertController, animated: true, completion: nil)
     }
     
 }

@@ -86,7 +86,7 @@ class MovieDetailsCell: UICollectionViewCell {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
     
     fileprivate func createPlotString(string: String) -> NSMutableAttributedString {

@@ -14,9 +14,20 @@ class MovieTrailersController: UITableViewController {
     
     var movieVideos: [MovieVideo]?
     
+    fileprivate let noTrailersLabel: UILabel = {
+        let label = UILabel()
+        label.text = "There are no available trailers for this movie..."
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     var movie: Movie? {
         didSet {
-            print(movie?.id ?? "NIL NOVIE" )
             guard let id = movie?.id else { return }
             fetchVideos(movieId: id)
         }
@@ -30,6 +41,7 @@ class MovieTrailersController: UITableViewController {
         navigationItem.title = "Trailers"
         
         setupNavigationBar()
+        setupNoTrailersLabel()
         
         tableView.allowsSelection = false
         tableView.register(MovieTrailerCell.self, forCellReuseIdentifier: trailerCellid)
@@ -56,10 +68,25 @@ class MovieTrailersController: UITableViewController {
     }
     
     func filterMovieVideos(videos: [MovieVideo]) {
+        noTrailersLabel.isHidden = true
+        
+        if videos.count == 0 {
+            noTrailersLabel.isHidden = false
+            return
+        }
+        
         movieVideos = videos.filter({ (video) -> Bool in
             video.site == "YouTube" && (video.type == "Trailer" || video.type == "Teaser")
         })
         tableView.reloadData()
+    }
+    
+    fileprivate func setupNoTrailersLabel() {
+        view.addSubview(noTrailersLabel)
+        noTrailersLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32).isActive = true
+        noTrailersLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        noTrailersLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+        noTrailersLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

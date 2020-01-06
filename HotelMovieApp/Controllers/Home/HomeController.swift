@@ -37,7 +37,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func checkForUserSignedIn() {
         if Auth.auth().currentUser?.uid == nil {
             print("no user signed in...")
-            perform(#selector(handleSignOut), with: nil, afterDelay: 0)
+            perform(#selector(performLogout), with: nil, afterDelay: 0)
         }
     }
     
@@ -51,7 +51,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
-    func performLogout() {
+    @objc func performLogout() {
         do {
             try Auth.auth().signOut()
         }

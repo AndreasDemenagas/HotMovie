@@ -79,8 +79,6 @@ class ApiService {
         
         let urlString = "https://api.themoviedb.org/3/search/movie?api_key=8708e6e442f4c7d558ae6aa51d79152b&query=\(term)"
         
-        print("GET with URL \(urlString)")
-        
         fetchGenericData(urlString: urlString, completion: completion)
         
     }

@@ -43,12 +43,6 @@ class FirebaseService {
             }
     
         }, withCancel: nil)
-        
-//        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (_) in
-//            print("After 3... \(movies.count)")
-//            completion(movies)
-//        }
-        
     }
     
     func addMovieToList(movieId: Int, completion: @escaping () -> () ) {

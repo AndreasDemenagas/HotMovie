@@ -2,8 +2,7 @@
 //  Videos.swift
 //  HotelMovieApp
 //
-//  Created by Andrew Demenagas on 21/12/19.
-//  Copyright © 2019 Andrew Demenagas. All rights reserved.
+//  IB DP Computer Science IA
 //
 
 import Foundation

@@ -1,9 +1,8 @@
 //
 //  Extension_LayoutAnchors.swift
-//  LayoutAnchors
+//  HotelMovieApp
 //
-//  Created by Andreas Demenagas on 12/15/18.
-//  Copyright © 2018 Andreas Demenagas. All rights reserved.
+//  IB DP Computer Science IA
 //
 
 import UIKit

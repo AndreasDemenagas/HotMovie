@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  HotelMovieApp
 //
-//  Created by Andrew Demenagas on 10/11/19.
-//  Copyright © 2019 Andrew Demenagas. All rights reserved.
+//  IB DP Computer Science IA
 //
 
 import UIKit

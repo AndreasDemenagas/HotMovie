@@ -1,9 +1,8 @@
 //
 //  ListCell.swift
-//  MoviesDarkFriend
+//  HotelMovieApp
 //
-//  Created by Andreas Demenagas on 10/5/19.
-//  Copyright © 2019 Andreas Demenagas. All rights reserved.
+//  IB DP Computer Science IA
 //
 
 import UIKit

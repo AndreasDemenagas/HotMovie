@@ -2,8 +2,7 @@
 //  Alerts.swift
 //  HotelMovieApp
 //
-//  Created by Andrew Demenagas on 28/12/19.
-//  Copyright © 2019 Andrew Demenagas. All rights reserved.
+//  IB DP Computer Science IA
 //
 
 import UIKit

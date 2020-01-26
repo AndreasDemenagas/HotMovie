@@ -11,7 +11,7 @@ import UIKit
 class ListCell: UICollectionViewCell {
     
     let posterImageView: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "kqjL17yufvn9OVLyXYpvtyrFfak"))
+        let imgView = UIImageView(image: UIImage(named: "mad-max-poster"))
         imgView.contentMode = .scaleAspectFill
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.layer.borderColor = UIColor(white: 1, alpha: 0.6).cgColor

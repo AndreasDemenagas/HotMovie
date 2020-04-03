@@ -49,6 +49,12 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         fetchUserList()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(123123)
+        fetchUserList()
+    }
+    
     fileprivate func fetchUserList() {
         print("fetching the list of the user...")
         FirebaseService.shared.fetchUserList { movies in

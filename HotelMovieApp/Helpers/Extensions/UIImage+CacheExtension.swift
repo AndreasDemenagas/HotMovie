@@ -20,6 +20,7 @@ extension UIImageView {
         }
         
         guard let url = URL(string: urlString) else {
+            print("error in url - image caching...")
             return
         }
         

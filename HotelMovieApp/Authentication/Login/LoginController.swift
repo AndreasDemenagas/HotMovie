@@ -8,16 +8,6 @@
 
 import UIKit
 
-//
-//  UILabel+Extension.swift
-//  KeyboardScrollingForm
-//
-//  Created by Andrew Demenagas on 20/4/20.
-//  Copyright © 2020 Andrew Demenagas. All rights reserved.
-//
-
-import UIKit
-
 class LoginController: UIViewController, UITextFieldDelegate {
     
     let movieDarkLabel: UILabel = {
@@ -76,7 +66,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handlePresentSignUp() {
-        let signUpController = SignUpController()
+        let signUpController = RegistrationController()
         present(signUpController, animated: true, completion: nil)
     }
     

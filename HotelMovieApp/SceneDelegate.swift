@@ -2,10 +2,11 @@
 //  SceneDelegate.swift
 //  HotelMovieApp
 //
-//  IB DP Computer Science IA
+//  Created by Andrew Demenagas on 21/4/20.
+//  Copyright © 2020 Andrew Demenagas. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = LoginController()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -16,6 +16,8 @@
 		F50DA8C8237883C70065CD2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50DA8C6237883C70065CD2B /* LaunchScreen.storyboard */; };
 		F50DA8D3237883C70065CD2B /* HotelMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8D2237883C70065CD2B /* HotelMovieAppTests.swift */; };
 		F50DA8DE237883C70065CD2B /* HotelMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8DD237883C70065CD2B /* HotelMovieAppUITests.swift */; };
+		F5469CA524602FFB00194D3D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5469CA424602FFB00194D3D /* MainTabBarController.swift */; };
+		F5469CA82460328D00194D3D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5469CA72460328D00194D3D /* HomeController.swift */; };
 		F5A5C9B4245F3639001CF32C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B3245F3639001CF32C /* LoginController.swift */; };
 		F5A5C9B6245F3646001CF32C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B5245F3646001CF32C /* RegistrationController.swift */; };
 		F5A5C9B8245F369E001CF32C /* Extension_LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */; };
@@ -66,6 +68,8 @@
 		F50DA8D9237883C70065CD2B /* HotelMovieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelMovieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50DA8DD237883C70065CD2B /* HotelMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMovieAppUITests.swift; sourceTree = "<group>"; };
 		F50DA8DF237883C70065CD2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5469CA424602FFB00194D3D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F5469CA72460328D00194D3D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		F5A5C9B3245F3639001CF32C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F5A5C9B5245F3646001CF32C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_LayoutAnchors.swift; sourceTree = "<group>"; };
@@ -155,7 +159,9 @@
 			children = (
 				F50DA8BB237883C30065CD2B /* AppDelegate.swift */,
 				F50DA8BD237883C30065CD2B /* SceneDelegate.swift */,
+				F5469CA424602FFB00194D3D /* MainTabBarController.swift */,
 				F5A5C9B2245F361E001CF32C /* Authentication */,
+				F5469CA62460327E00194D3D /* Home */,
 				F5A5C9B9245F3707001CF32C /* Extras */,
 				F50DA8C4237883C70065CD2B /* Assets.xcassets */,
 				F50DA8C6237883C70065CD2B /* LaunchScreen.storyboard */,
@@ -181,6 +187,14 @@
 				F50DA8DF237883C70065CD2B /* Info.plist */,
 			);
 			path = HotelMovieAppUITests;
+			sourceTree = "<group>";
+		};
+		F5469CA62460327E00194D3D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F5469CA72460328D00194D3D /* HomeController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		F5A5C9B2245F361E001CF32C /* Authentication */ = {
@@ -462,11 +476,13 @@
 			files = (
 				F5A5C9B8245F369E001CF32C /* Extension_LayoutAnchors.swift in Sources */,
 				F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */,
+				F5469CA524602FFB00194D3D /* MainTabBarController.swift in Sources */,
 				F5A5C9BF245F3792001CF32C /* ProfilePickerController.swift in Sources */,
 				F5A5C9BB245F3739001CF32C /* UIKit+Extensions.swift in Sources */,
 				F5A5C9C5245F3868001CF32C /* RegisterInputsView.swift in Sources */,
 				F5A5C9B4245F3639001CF32C /* LoginController.swift in Sources */,
 				F5A5C9B6245F3646001CF32C /* RegistrationController.swift in Sources */,
+				F5469CA82460328D00194D3D /* HomeController.swift in Sources */,
 				F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */,
 				F5A5C9C3245F383C001CF32C /* InputTextField.swift in Sources */,
 				F5A5C9C1245F381A001CF32C /* LoginInputsView.swift in Sources */,

@@ -67,7 +67,13 @@ class LoginController: UIViewController, LoginDelegate {
     }
     
     func didTapLogin(with email: String, and password: String) {
-        print(email, password)
+        FIRService.shared.loginUser(with: email, and: password) { (error) in
+            if let error = error {
+                print("Login error", error)
+                return
+            }
+            print("logged in user...")
+        }
     }
     
     @objc func handlePresentSignUp() {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class HomeController: UIViewController {
     
@@ -24,7 +23,7 @@ class HomeController: UIViewController {
     }
     
     fileprivate func checkIfUserSignedIn() {
-        if Auth.auth().currentUser?.uid == nil {
+        if FIRService.shared.getCurrentUserId() == nil {
             performLogOut()
         }
     }
@@ -33,17 +32,17 @@ class HomeController: UIViewController {
         self.performLogOut()
     }
     
-    @objc fileprivate func performLogOut() {
-        do {
-            try Auth.auth().signOut()
+    fileprivate func performLogOut() {
+        FIRService.shared.logoutUser { [weak self] (error)  in
+            if let error = error {
+                print("logout error", error)
+                return
+            }
+            
+            let loginController = LoginController()
+            loginController.isModalInPresentation = true
+            self?.present(loginController, animated: true)
         }
-        catch let logoutError {
-            print("Log out error", logoutError)
-        }
-        
-        let loginController = LoginController()
-        loginController.isModalInPresentation = true
-        present(loginController, animated: true)
     }
     
     fileprivate func setupNavigationBar() {

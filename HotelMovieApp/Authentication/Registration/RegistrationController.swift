@@ -48,7 +48,15 @@ class RegistrationController: UIViewController, RegisterDelegate {
     }
     
     func didTapRegister(with username: String, email: String, and password: String) {
-        print(username, email, password)
+        guard let image = profileImageView.image else { return }
+        FIRService.shared.registerUser(email: email, username: username, password: password, profileImage: image) { (error) in
+            if let error = error {
+                print("TRY AGAIN", error)
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     fileprivate func setupKeyboardObserversAndTap() {

@@ -72,7 +72,7 @@ class LoginController: UIViewController, LoginDelegate {
                 print("Login error", error)
                 return
             }
-            print("logged in user...")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

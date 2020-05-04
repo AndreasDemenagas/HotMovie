@@ -37,5 +37,58 @@ class FIRService {
             completion(error)
         }
     }
+    
+    func registerUser(email: String, username: String, password: String, profileImage: UIImage, completion: @escaping (Error?) -> ()) {
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                completion(error)
+                print("Register User Error, ", error)
+                return
+            }
+            
+            guard let userId = result?.user.uid else { return }
+            let imageName = UUID().uuidString
+            let storageRef = Storage.storage().reference().child("profile-images").child("\(imageName).png")
+            guard let imageData = profileImage.jpegData(compressionQuality: 0.1) else { return }
+            
+            storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+                if let error = error {
+                    completion(error)
+                    print("Image upload error", error)
+                    return
+                }
+                
+                print("Image UPLOADED")
+                storageRef.downloadURL { (url, error) in
+                    if let error = error {
+                        completion(error)
+                        print("URL Error", error)
+                        return
+                    }
+                    
+                    guard let urlString = url?.absoluteString else { return }
+                    
+                    let values = ["username": username, "email": email, "profileImageUrl": urlString]
+                    
+                    self.registerUserToDatabase(userId: userId, values: values, completion: completion)
+                }
+            }
+        }
+    }
+    
+    fileprivate func registerUserToDatabase(userId: String, values: [String: Any], completion: @escaping (Error?) -> () ) {
+        print("register to db....")
+        let reference = Database.database().reference().child("users").child(userId)
+        
+        reference.updateChildValues(values) { (error, reference) in
+            if let error = error {
+                completion(error)
+                print("register to database error, ", error)
+                return
+            }
+            
+            completion(nil)
+        }
+    }
 
 }

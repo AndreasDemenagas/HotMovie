@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: UIViewController, UITextFieldDelegate {
+class LoginController: UIViewController, LoginDelegate {
     
     let movieDarkLabel: UILabel = {
         let l = UILabel(text: "MovieRental", font: .boldSystemFont(ofSize: 45))
@@ -16,7 +16,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
         return l
     }()
     
-    let inputsView = LoginInputView()
+    lazy var inputsView: LoginInputView = {
+        let v = LoginInputView()
+        v.delegate = self
+        return v
+    }()
     
     let notAccountLabel = UILabel(text: "Don't have an account?", textColor: .lightGray, font: .systemFont(ofSize: 18), alignment: .center)
     
@@ -62,7 +66,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    @objc func handleLogin() {
+    func didTapLogin(with email: String, and password: String) {
+        print(email, password)
     }
     
     @objc func handlePresentSignUp() {

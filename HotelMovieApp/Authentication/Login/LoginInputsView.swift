@@ -32,8 +32,11 @@ class LoginInputView: UIView {
     }()
     
     @objc func loginPressed() {
-        print("login")
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        delegate?.didTapLogin(with: email, and: password)
     }
+    
+    var delegate: LoginDelegate? 
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -8,7 +8,7 @@
 
 import UIKit 
 
-class RegistrationController: UIViewController {
+class RegistrationController: UIViewController, RegisterDelegate {
     
     lazy var profileImageView: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "plus_photo")?.withRenderingMode(.alwaysTemplate))
@@ -22,8 +22,9 @@ class RegistrationController: UIViewController {
         return iv
     }()
     
-    let registerInputsView: RegisterInputsView = {
+    lazy var registerInputsView: RegisterInputsView = {
         let v = RegisterInputsView()
+        v.delegate = self
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
@@ -44,6 +45,10 @@ class RegistrationController: UIViewController {
         setupKeyboardObserversAndTap()
         
         print(view.frame.height)
+    }
+    
+    func didTapRegister(with username: String, email: String, and password: String) {
+        print(username, email, password)
     }
     
     fileprivate func setupKeyboardObserversAndTap() {

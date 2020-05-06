@@ -10,13 +10,14 @@
 import UIKit
 
 extension UILabel {
-    convenience init(text: String, textColor: UIColor = .white, font: UIFont? = nil, alignment: NSTextAlignment = .left) {
+    convenience init(text: String, textColor: UIColor = .white, font: UIFont? = nil, alignment: NSTextAlignment = .left, numberOfLines: Int = 0) {
         self.init()
         self.translatesAutoresizingMaskIntoConstraints = false
         self.text = text
         self.font = font
         self.textColor = textColor
         self.textAlignment = alignment
+        self.numberOfLines = numberOfLines
     }
 }
 
@@ -32,5 +33,12 @@ extension UIButton {
         self.setTitleColor(titleColor, for: .normal)
         self.layer.masksToBounds = true
         self.layer.cornerRadius = cornerRadius
+    }
+}
+
+extension UIView {
+    convenience init(backgroundColor: UIColor) {
+        self.init()
+        self.backgroundColor = backgroundColor
     }
 }

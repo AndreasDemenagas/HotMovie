@@ -20,6 +20,11 @@
 		F5469CA82460328D00194D3D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5469CA72460328D00194D3D /* HomeController.swift */; };
 		F5469CAA246034BE00194D3D /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5469CA9246034BE00194D3D /* AuthProtocols.swift */; };
 		F5469CAC24604B8500194D3D /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5469CAB24604B8500194D3D /* FirebaseService.swift */; };
+		F559F7862462D31600E8F5C7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F7852462D31600E8F5C7 /* APIService.swift */; };
+		F559F7892462D33400E8F5C7 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F7882462D33400E8F5C7 /* SearchController.swift */; };
+		F559F78C2462D64000E8F5C7 /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F78B2462D64000E8F5C7 /* SearchModels.swift */; };
+		F559F78E2462D6D400E8F5C7 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F78D2462D6D400E8F5C7 /* SearchCell.swift */; };
+		F559F7902462D7E800E8F5C7 /* CellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F78F2462D7E800E8F5C7 /* CellProtocols.swift */; };
 		F5A5C9B4245F3639001CF32C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B3245F3639001CF32C /* LoginController.swift */; };
 		F5A5C9B6245F3646001CF32C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B5245F3646001CF32C /* RegistrationController.swift */; };
 		F5A5C9B8245F369E001CF32C /* Extension_LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */; };
@@ -74,6 +79,11 @@
 		F5469CA72460328D00194D3D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		F5469CA9246034BE00194D3D /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		F5469CAB24604B8500194D3D /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		F559F7852462D31600E8F5C7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		F559F7882462D33400E8F5C7 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		F559F78B2462D64000E8F5C7 /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
+		F559F78D2462D6D400E8F5C7 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		F559F78F2462D7E800E8F5C7 /* CellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocols.swift; sourceTree = "<group>"; };
 		F5A5C9B3245F3639001CF32C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F5A5C9B5245F3646001CF32C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_LayoutAnchors.swift; sourceTree = "<group>"; };
@@ -166,6 +176,8 @@
 				F5469CA424602FFB00194D3D /* MainTabBarController.swift */,
 				F5A5C9B2245F361E001CF32C /* Authentication */,
 				F5469CA62460327E00194D3D /* Home */,
+				F559F7872462D31E00E8F5C7 /* Search */,
+				F559F78A2462D61A00E8F5C7 /* Models */,
 				F5469CAD24604B8C00194D3D /* Service */,
 				F5A5C9B9245F3707001CF32C /* Extras */,
 				F50DA8C4237883C70065CD2B /* Assets.xcassets */,
@@ -206,8 +218,26 @@
 			isa = PBXGroup;
 			children = (
 				F5469CAB24604B8500194D3D /* FirebaseService.swift */,
+				F559F7852462D31600E8F5C7 /* APIService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		F559F7872462D31E00E8F5C7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F559F7882462D33400E8F5C7 /* SearchController.swift */,
+				F559F78D2462D6D400E8F5C7 /* SearchCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F559F78A2462D61A00E8F5C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F559F78B2462D64000E8F5C7 /* SearchModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F5A5C9B2245F361E001CF32C /* Authentication */ = {
@@ -226,6 +256,7 @@
 				F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */,
 				F5A5C9BA245F3739001CF32C /* UIKit+Extensions.swift */,
 				F5A5C9C2245F383C001CF32C /* InputTextField.swift */,
+				F559F78F2462D7E800E8F5C7 /* CellProtocols.swift */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -489,6 +520,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5A5C9B8245F369E001CF32C /* Extension_LayoutAnchors.swift in Sources */,
+				F559F7862462D31600E8F5C7 /* APIService.swift in Sources */,
+				F559F78C2462D64000E8F5C7 /* SearchModels.swift in Sources */,
 				F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */,
 				F5469CA524602FFB00194D3D /* MainTabBarController.swift in Sources */,
 				F5A5C9BF245F3792001CF32C /* ProfilePickerController.swift in Sources */,
@@ -498,6 +531,9 @@
 				F5A5C9B4245F3639001CF32C /* LoginController.swift in Sources */,
 				F5A5C9B6245F3646001CF32C /* RegistrationController.swift in Sources */,
 				F5469CAA246034BE00194D3D /* AuthProtocols.swift in Sources */,
+				F559F7892462D33400E8F5C7 /* SearchController.swift in Sources */,
+				F559F78E2462D6D400E8F5C7 /* SearchCell.swift in Sources */,
+				F559F7902462D7E800E8F5C7 /* CellProtocols.swift in Sources */,
 				F5469CA82460328D00194D3D /* HomeController.swift in Sources */,
 				F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */,
 				F5A5C9C3245F383C001CF32C /* InputTextField.swift in Sources */,

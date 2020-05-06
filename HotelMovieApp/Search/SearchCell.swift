@@ -29,6 +29,17 @@ class SearchCell: UITableViewCell, ItemCell {
         return imgView
     }()
     
+    var movie: Movie? {
+        didSet {
+            guard let movie = movie, let posterPath = movie.backdrop_path else { return }
+            movieTitleLabel.text = movie.title
+            detailsLabel.formatAndShowDate(dateString: movie.release_date, formatString: "MMM dd YYYY")
+            
+            let urlString = Service.smallImageUrl + posterPath
+            posterImageView.loadImageFromCacheOrDownload(urlString: urlString)
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

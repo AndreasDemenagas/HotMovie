@@ -77,6 +77,12 @@ class SearchController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailsController = MovieDetailsController(collectionViewLayout: UICollectionViewFlowLayout())
+        detailsController.movie = movies[indexPath.row]
+        present(detailsController, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }

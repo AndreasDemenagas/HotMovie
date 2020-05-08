@@ -8,13 +8,11 @@
 
 import UIKit
 
-class SearchCell: UITableViewCell, ItemCell {
-    
-    static var id: String = "searchCellid"
+class SearchCell: UITableViewCell {
     
     let separatorLine = UIView(backgroundColor: .white)
     
-    let movieTitleLabel = UILabel(text: "Star Wars: The Rise of Skywalker", textColor: .white, font: .boldSystemFont(ofSize: 20), numberOfLines: 2)
+    let movieTitleLabel = UILabel(text: "", textColor: .white, font: .boldSystemFont(ofSize: 20), numberOfLines: 2)
     
     let detailsLabel = UILabel(text: "Released: 2019", textColor: .lightGray, font: .systemFont(ofSize: 16))
     
@@ -31,12 +29,18 @@ class SearchCell: UITableViewCell, ItemCell {
     
     var movie: Movie? {
         didSet {
-            guard let movie = movie, let posterPath = movie.backdrop_path else { return }
+            guard let movie = movie else { return }
             movieTitleLabel.text = movie.title
             detailsLabel.formatAndShowDate(dateString: movie.release_date, formatString: "MMM dd YYYY")
             
-            let urlString = Service.smallImageUrl + posterPath
-            posterImageView.loadImageFromCacheOrDownload(urlString: urlString)
+            if let posterPath = movie.poster_path {
+                let urlString = Service.smallImageUrl + posterPath
+                posterImageView.loadImageFromCacheOrDownload(urlString: urlString)
+                return
+            }
+            
+            posterImageView.image = nil
+            posterImageView.backgroundColor = .lightGray
         }
     }
     
@@ -70,3 +74,4 @@ class SearchCell: UITableViewCell, ItemCell {
     }
     
 }
+

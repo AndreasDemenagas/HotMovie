@@ -24,7 +24,6 @@
 		F559F7892462D33400E8F5C7 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F7882462D33400E8F5C7 /* SearchController.swift */; };
 		F559F78C2462D64000E8F5C7 /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F78B2462D64000E8F5C7 /* SearchModels.swift */; };
 		F559F78E2462D6D400E8F5C7 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F78D2462D6D400E8F5C7 /* SearchCell.swift */; };
-		F559F7902462D7E800E8F5C7 /* CellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F78F2462D7E800E8F5C7 /* CellProtocols.swift */; };
 		F559F7922462E44C00E8F5C7 /* UIImage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F7912462E44C00E8F5C7 /* UIImage+Cache.swift */; };
 		F559F7942462E48000E8F5C7 /* UILabel+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F7932462E48000E8F5C7 /* UILabel+Date.swift */; };
 		F5A5C9B4245F3639001CF32C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B3245F3639001CF32C /* LoginController.swift */; };
@@ -85,7 +84,6 @@
 		F559F7882462D33400E8F5C7 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F559F78B2462D64000E8F5C7 /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
 		F559F78D2462D6D400E8F5C7 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
-		F559F78F2462D7E800E8F5C7 /* CellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocols.swift; sourceTree = "<group>"; };
 		F559F7912462E44C00E8F5C7 /* UIImage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Cache.swift"; sourceTree = "<group>"; };
 		F559F7932462E48000E8F5C7 /* UILabel+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Date.swift"; sourceTree = "<group>"; };
 		F5A5C9B3245F3639001CF32C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 		F559F7952462E49B00E8F5C7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F559F78F2462D7E800E8F5C7 /* CellProtocols.swift */,
 				F5469CA9246034BE00194D3D /* AuthProtocols.swift */,
 			);
 			path = Protocols;
@@ -549,7 +546,6 @@
 				F559F7892462D33400E8F5C7 /* SearchController.swift in Sources */,
 				F559F78E2462D6D400E8F5C7 /* SearchCell.swift in Sources */,
 				F559F7922462E44C00E8F5C7 /* UIImage+Cache.swift in Sources */,
-				F559F7902462D7E800E8F5C7 /* CellProtocols.swift in Sources */,
 				F5469CA82460328D00194D3D /* HomeController.swift in Sources */,
 				F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */,
 				F5A5C9C3245F383C001CF32C /* InputTextField.swift in Sources */,

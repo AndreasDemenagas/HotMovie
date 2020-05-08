@@ -10,7 +10,8 @@ import UIKit
 
 class SearchController: UITableViewController, UISearchBarDelegate {
     
-    let searchController = UISearchController(searchResultsController: nil)
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    fileprivate let searchCellId = "searchCellId"
     
     var movies = [Movie]()
     
@@ -23,7 +24,7 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     }
     
     fileprivate func setupTableView() {
-        tableView.register(SearchCell.self, forCellReuseIdentifier: SearchCell.id)
+        tableView.register(SearchCell.self, forCellReuseIdentifier: searchCellId)
     }
     
     fileprivate func setupNavigationBar() {
@@ -65,14 +66,18 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.id, for: indexPath) as! SearchCell
-        cell.movie = movies[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: searchCellId, for: indexPath) as! SearchCell
+        cell.movie = movies[indexPath.item]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(movies[indexPath.item].original_title)
+//    }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text, searchTerm.count > 0 else {

@@ -13,10 +13,15 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     fileprivate let searchController = UISearchController(searchResultsController: nil)
     fileprivate let searchCellId = "searchCellId"
     
+    fileprivate let enterSearchLabel = UILabel(text: "Please enter search term above...", font: .boldSystemFont(ofSize: 20), alignment: .center)
+    
     var movies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.addSubview(enterSearchLabel)
+        enterSearchLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 32, left: 16, bottom: 0, right: 0), size: .init(width: view.frame.width - 32, height: 50))
         
         setupNavigationBar()
         setupSearchBar()
@@ -24,12 +29,12 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     }
     
     fileprivate func setupTableView() {
+        tableView.alwaysBounceVertical = false
         tableView.register(SearchCell.self, forCellReuseIdentifier: searchCellId)
     }
     
     fileprivate func setupNavigationBar() {
         navigationItem.searchController = searchController
-        
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.tintColor = .white
         
@@ -62,6 +67,7 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        enterSearchLabel.isHidden = movies.count > 0 ? true : false
         return movies.count > 0 ? movies.count : 0
     }
     
@@ -74,10 +80,6 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(movies[indexPath.item].original_title)
-//    }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text, searchTerm.count > 0 else {

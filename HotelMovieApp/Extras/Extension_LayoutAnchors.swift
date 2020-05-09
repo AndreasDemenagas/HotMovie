@@ -10,8 +10,8 @@ import UIKit
 
 extension UIView {
     
-    func fillSuperView() {
-        anchor(top: superview?.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.bottomAnchor, trailing: superview?.trailingAnchor)
+    func fillSuperView(padding: UIEdgeInsets = .zero) {
+        anchor(top: superview?.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.bottomAnchor, trailing: superview?.trailingAnchor, padding: .init(top: padding.top, left: padding.left, bottom: padding.bottom, right: padding.right))
     }
     
     func anchorSize(to view: UIView) {

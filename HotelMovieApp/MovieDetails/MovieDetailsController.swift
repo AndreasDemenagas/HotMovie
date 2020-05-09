@@ -30,8 +30,9 @@ class MovieDetailsController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: infoCellId, for: indexPath) as! DetailsInfoCell
-        return cell
+        let infoCell = collectionView.dequeueReusableCell(withReuseIdentifier: infoCellId, for: indexPath) as! DetailsInfoCell
+        infoCell.movie = movie
+        return infoCell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -44,7 +45,19 @@ class MovieDetailsController: UICollectionViewController {
 extension MovieDetailsController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width, height: 250)
+        let height = getInfoCellHeight()
+        return .init(width: view.frame.width, height: height)
+    }
+    
+    fileprivate func getInfoCellHeight() -> CGFloat {
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 250)
+        let dummyCell = DetailsInfoCell(frame: frame)
+        dummyCell.movie = movie
+        dummyCell.layoutIfNeeded()
+        
+        let targetSize = CGSize(width: view.frame.width, height: 1000)
+        let estimatedSize = dummyCell.systemLayoutSizeFitting(targetSize)
+        return estimatedSize.height
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

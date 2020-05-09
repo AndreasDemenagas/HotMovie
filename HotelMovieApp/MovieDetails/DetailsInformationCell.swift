@@ -18,7 +18,7 @@ class DetailsInfoCell: UICollectionViewCell {
     
     let plotLabel = UILabel(text: "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.", font: .systemFont(ofSize: 18), numberOfLines: 0)
     
-    let separatorLine = UIView(backgroundColor: .lightGray)
+    let separatorLine = UIView(backgroundColor: .white)
     
     lazy var trailerBtn: UIButton = {
         let btn = UIButton(type: .system)
@@ -30,10 +30,18 @@ class DetailsInfoCell: UICollectionViewCell {
         return btn
     }()
     
+    var movie: Movie? {
+        didSet {
+            guard let movie = movie else { return }
+            movieTitleLabel.text = movie.title
+            releasedLabel.formatAndShowDate(dateString: movie.release_date, formatString: "MMMM dd, yyyy")
+            plotLabel.text = movie.overview ?? ""
+            ratingLabel.text = "Rating: \(movie.vote_average ?? 0)/10"
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .red
         
         setupCell()
     }
@@ -43,7 +51,13 @@ class DetailsInfoCell: UICollectionViewCell {
     }
     
     fileprivate func setupCell() {
+        let stack = UIStackView(arrangedSubviews:[movieTitleLabel, releasedLabel, plotLabel,  trailerBtn, ratingLabel])
+        stack.alignment = .leading
+        stack.axis = .vertical
+        stack.spacing = 6
         
+        addSubview(stack)
+        stack.fillSuperView(padding: .init(top: 0, left: 16, bottom: 0, right: 16))
     }
     
     

@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol DetailsHeaderDelegate: AnyObject {
-    func didCancel()
-}
-
 class DetailsPosterHeader: UICollectionReusableView {
     
     let posterImageView: UIImageView = {

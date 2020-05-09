@@ -13,18 +13,18 @@ class Service {
     static let shared = Service()
     static let smallImageUrl = "https://image.tmdb.org/t/p/w300/"
     
-    let baseUrl = "https://api.themoviedb.org/3/"
-    let apiKey = "?api_key=8708e6e442f4c7d558ae6aa51d79152b"
+    let base_url = "https://api.themoviedb.org/3/"
+    let api_key = "?api_key=8708e6e442f4c7d558ae6aa51d79152b"
     
     func searchMovies(searchTerm: String, completion: @escaping (Result<SearchResult, Error>) -> () ) {
         let term = searchTerm.replacingOccurrences(of: " ", with: "+")
         
-        let urlString = baseUrl + "search/movie" + apiKey + "&query=\(term)"
+        let urlString = base_url + "search/movie" + api_key + "&query=\(term)"
         
         fetchGenericData(urlString: urlString, completion: completion)
     }
     
-    func fetchGenericData<T: Decodable>(urlString: String, completion: @escaping (Result<T, Error>) -> ()) {
+    fileprivate func fetchGenericData<T: Decodable>(urlString: String, completion: @escaping (Result<T, Error>) -> ()) {
         guard let url = URL(string: urlString) else {            fatalError("Invalid URL")
         }
         

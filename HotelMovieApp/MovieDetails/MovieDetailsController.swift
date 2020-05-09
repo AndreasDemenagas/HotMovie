@@ -11,6 +11,7 @@ import UIKit
 class MovieDetailsController: UICollectionViewController {
     
     fileprivate let posterHeaderId = "posterHeaderId"
+    fileprivate let infoCellId = "infocellid"
     
     var movie: Movie?
     
@@ -18,6 +19,7 @@ class MovieDetailsController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView.register(DetailsPosterHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: posterHeaderId)
+        collectionView.register(DetailsInfoCell.self, forCellWithReuseIdentifier: infoCellId)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -27,8 +29,13 @@ class MovieDetailsController: UICollectionViewController {
         return header
     }
     
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: infoCellId, for: indexPath) as! DetailsInfoCell
+        return cell
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
 }
 
@@ -36,13 +43,17 @@ class MovieDetailsController: UICollectionViewController {
 // MARK: DelegateFlowLayout
 extension MovieDetailsController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width, height: 250)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return .init(width: view.frame.width, height: view.frame.width * 1.5)
     }
     
 }
 
-// MARK: Custom Delegates
+// MARK: Custom Delegation
 extension MovieDetailsController: DetailsHeaderDelegate {
     func didCancel() {
         dismiss(animated: true, completion: nil)

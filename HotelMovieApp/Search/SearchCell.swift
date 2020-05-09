@@ -48,6 +48,8 @@ class SearchCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .black
+        selectionStyle = .none
+        
         setupCell()
     }
     

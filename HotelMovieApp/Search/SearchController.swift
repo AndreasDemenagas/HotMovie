@@ -30,6 +30,7 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     
     fileprivate func setupTableView() {
         tableView.alwaysBounceVertical = false
+        tableView.separatorStyle = .none
         tableView.register(SearchCell.self, forCellReuseIdentifier: searchCellId)
     }
     

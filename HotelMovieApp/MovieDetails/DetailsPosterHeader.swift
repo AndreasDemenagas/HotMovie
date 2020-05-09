@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DetailsHeaderDelegate: AnyObject {
+    func didCancel()
+}
+
 class DetailsPosterHeader: UICollectionReusableView {
     
     let posterImageView: UIImageView = {
@@ -35,6 +39,8 @@ class DetailsPosterHeader: UICollectionReusableView {
         return imgView
     }()
     
+    weak var delegate: DetailsHeaderDelegate?
+    
     var posterPath: String? {
         didSet {
             guard let posterPath = posterPath else { return }
@@ -50,7 +56,7 @@ class DetailsPosterHeader: UICollectionReusableView {
     }
     
     @objc private func handleDismiss() {
-        print("Cancelling Details...")
+        delegate?.didCancel()
     }
     
     required init?(coder: NSCoder) {

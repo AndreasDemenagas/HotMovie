@@ -41,6 +41,7 @@
 		F5F48D9D23870CCE004CE6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5F48D9C23870CCE004CE6BA /* GoogleService-Info.plist */; };
 		F5FB3A562468AFA0009FAEF6 /* MovieTrailersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB3A552468AFA0009FAEF6 /* MovieTrailersController.swift */; };
 		F5FB3A582468B217009FAEF6 /* MovieTrailerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB3A572468B217009FAEF6 /* MovieTrailerCell.swift */; };
+		F5FB3A5B2468B3CE009FAEF6 /* VideoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB3A5A2468B3CE009FAEF6 /* VideoModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		F5F48D9C23870CCE004CE6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5FB3A552468AFA0009FAEF6 /* MovieTrailersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailersController.swift; sourceTree = "<group>"; };
 		F5FB3A572468B217009FAEF6 /* MovieTrailerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerCell.swift; sourceTree = "<group>"; };
+		F5FB3A5A2468B3CE009FAEF6 /* VideoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				F559F78B2462D64000E8F5C7 /* SearchModels.swift */,
+				F5FB3A5A2468B3CE009FAEF6 /* VideoModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				F5FB3A562468AFA0009FAEF6 /* MovieTrailersController.swift in Sources */,
 				F559F7942462E48000E8F5C7 /* UILabel+Date.swift in Sources */,
 				F559F7892462D33400E8F5C7 /* SearchController.swift in Sources */,
+				F5FB3A5B2468B3CE009FAEF6 /* VideoModels.swift in Sources */,
 				F5FB3A582468B217009FAEF6 /* MovieTrailerCell.swift in Sources */,
 				F559F78E2462D6D400E8F5C7 /* SearchCell.swift in Sources */,
 				F559F7922462E44C00E8F5C7 /* UIImage+Cache.swift in Sources */,

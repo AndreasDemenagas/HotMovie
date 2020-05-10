@@ -13,8 +13,13 @@ class Service {
     static let shared = Service()
     static let smallImageUrl = "https://image.tmdb.org/t/p/w300/"
     
-    let base_url = "https://api.themoviedb.org/3/"
-    let api_key = "?api_key=8708e6e442f4c7d558ae6aa51d79152b"
+    fileprivate let base_url = "https://api.themoviedb.org/3/"
+    fileprivate let api_key = "?api_key=8708e6e442f4c7d558ae6aa51d79152b"
+    
+    func fetchMovieVideos(for id: Int, completion: @escaping (Result<VideoResponse, Error>) -> () ) {
+        let urlString = base_url + "movie/\(id)/videos" + api_key
+        fetchGenericData(urlString: urlString, completion: completion)
+    }
     
     func searchMovies(searchTerm: String, completion: @escaping (Result<SearchResult, Error>) -> () ) {
         let term = searchTerm.replacingOccurrences(of: " ", with: "+")

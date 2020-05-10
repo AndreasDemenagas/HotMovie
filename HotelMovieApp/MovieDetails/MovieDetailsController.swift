@@ -32,7 +32,7 @@ class MovieDetailsController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let infoCell = collectionView.dequeueReusableCell(withReuseIdentifier: infoCellId, for: indexPath) as! DetailsInfoCell
         infoCell.movie = movie
-        infoCell.trailersDelegate = self 
+        infoCell.trailersDelegate = self
         return infoCell
     }
     
@@ -75,6 +75,7 @@ extension MovieDetailsController: DetailsHeaderDelegate, TrailersDelegate {
     
     func didTapShowTrailers() {
         let trailersController = MovieTrailersController()
+        trailersController.movie = movie
         present(UINavigationController(rootViewController: trailersController), animated: true)
     }
 }

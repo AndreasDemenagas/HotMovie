@@ -25,7 +25,7 @@ class DetailsInfoCell: UICollectionViewCell {
         btn.setTitle("Watch Trailers", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         btn.setTitleColor(.green, for: .normal)
-//        btn.addTarget(self, action: #selector(handleShowTrailers), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(handleShowTrailers), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -40,10 +40,16 @@ class DetailsInfoCell: UICollectionViewCell {
         }
     }
     
+    var trailersDelegate: TrailersDelegate? 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupCell()
+    }
+    
+    @objc private func handleShowTrailers() {
+        trailersDelegate?.didTapShowTrailers()
     }
     
     required init?(coder: NSCoder) {

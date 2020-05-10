@@ -32,6 +32,7 @@ class MovieDetailsController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let infoCell = collectionView.dequeueReusableCell(withReuseIdentifier: infoCellId, for: indexPath) as! DetailsInfoCell
         infoCell.movie = movie
+        infoCell.trailersDelegate = self 
         return infoCell
     }
     
@@ -67,8 +68,13 @@ extension MovieDetailsController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: Custom Delegation
-extension MovieDetailsController: DetailsHeaderDelegate {
+extension MovieDetailsController: DetailsHeaderDelegate, TrailersDelegate {
     func didCancel() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func didTapShowTrailers() {
+        let trailersController = MovieTrailersController()
+        present(UINavigationController(rootViewController: trailersController), animated: true)
     }
 }

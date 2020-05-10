@@ -11,3 +11,7 @@ import Foundation
 protocol DetailsHeaderDelegate: AnyObject {
     func didCancel()
 }
+
+protocol TrailersDelegate {
+    func didTapShowTrailers()
+}

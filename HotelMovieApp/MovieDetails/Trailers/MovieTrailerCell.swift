@@ -24,6 +24,7 @@ class MovieTrailerCell: UITableViewCell {
     let thumbnailImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
         return iv
     }()
     

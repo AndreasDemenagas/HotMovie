@@ -39,8 +39,7 @@ class SearchCell: UITableViewCell {
                 return
             }
             
-            posterImageView.image = nil
-            posterImageView.backgroundColor = .lightGray
+            posterImageView.image = UIImage(named: "no-image")
         }
     }
     

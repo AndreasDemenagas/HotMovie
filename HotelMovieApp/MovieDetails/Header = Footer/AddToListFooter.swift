@@ -10,8 +10,33 @@ import UIKit
 
 class AddToListFooter: UICollectionReusableView {
     
+    let addToListLabel = UILabel(text: "Add this to your list", font: .boldSystemFont(ofSize: 22))
+    
+    lazy var addButton: UIImageView = {
+        let imgView = UIImageView(image: #imageLiteral(resourceName: "heart-white").withRenderingMode(.alwaysTemplate))
+        imgView.tintColor = .white
+        imgView.contentMode = .scaleAspectFit
+        imgView.isUserInteractionEnabled = true
+        imgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapAddToList)))
+        return imgView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        addSubview(addButton)
+        addButton.constantSize(width: 30, height: 30)
+        addButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        
+        addSubview(addToListLabel)
+        addToListLabel.fillSuperView(padding: .init(top: 0, left: 16, bottom: 0, right: 66))
+    }
+    
+    @objc fileprivate func handleTapAddToList() {
+        UIView.animate(withDuration: 0.3) {
+            self.addButton.image = UIImage(named: "heart-filled-red")
+        }
     }
     
     required init?(coder: NSCoder) {

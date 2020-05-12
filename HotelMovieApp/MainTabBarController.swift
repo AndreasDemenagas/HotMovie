@@ -21,7 +21,13 @@ class MainTabBarController: UITabBarController {
         let homeController = navigationController(viewController: HomeController(), imageName: "home", title: "Home")
         let listController = navigationController(viewController: UIViewController(), imageName: "list", title: "My List")
 
-        viewControllers =  [homeController, listController ,searchController]
+        viewControllers =  [homeController, listController, searchController]
+        
+        UITabBarItem.appearance().titlePositionAdjustment = .init(horizontal: 0, vertical: -4)
+        
+        for item in tabBar.items! {
+            item.imageInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+        }
     }
     
     fileprivate func navigationController(viewController: UIViewController, imageName: String, title: String) -> UINavigationController {

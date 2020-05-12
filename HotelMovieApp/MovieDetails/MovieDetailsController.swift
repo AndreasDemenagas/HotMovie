@@ -14,6 +14,7 @@ class MovieDetailsController: UICollectionViewController {
     fileprivate let infoCellId = "infocellid"
     fileprivate let castSectionCellid = "castSectionCellid"
     fileprivate let reviewsSectionCellid = "reviewsSectionCellid"
+    fileprivate let addToListFooterId = "addToListFooterId"
     
     var movie: Movie?
     
@@ -21,16 +22,23 @@ class MovieDetailsController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView.register(DetailsPosterHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: posterHeaderId)
+        collectionView.register(AddToListFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: addToListFooterId)
         collectionView.register(DetailsInfoCell.self, forCellWithReuseIdentifier: infoCellId)
         collectionView.register(MovieDetailsCastSectionCell.self, forCellWithReuseIdentifier: castSectionCellid)
         collectionView.register(ReviewsSectionCell.self, forCellWithReuseIdentifier: reviewsSectionCellid)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: posterHeaderId, for: indexPath) as! DetailsPosterHeader
-        header.delegate = self
-        header.posterPath = movie?.poster_path
-        return header
+        
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: posterHeaderId, for: indexPath) as! DetailsPosterHeader
+            header.delegate = self
+            header.posterPath = movie?.poster_path
+            return header
+        }
+        
+        let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: addToListFooterId, for: indexPath) as! AddToListFooter
+        return footer
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,6 +64,9 @@ class MovieDetailsController: UICollectionViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 1 {
             return .init(top: 10, left: 0, bottom: 0, right: 0)
+        }
+        if section == 2 {
+            return .init(top: 0, left: 0, bottom: 10, right: 0)
         }
         return .zero
     }
@@ -101,6 +112,13 @@ extension MovieDetailsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
             return .init(width: view.frame.width, height: view.frame.width * 1.5)
+        }
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if section == 2 {
+            return .init(width: view.frame.width, height: 65)
         }
         return .zero
     }

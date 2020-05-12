@@ -20,16 +20,20 @@ class ReviewsSectionCell: UICollectionViewCell {
         return vc
     }()
     
+    var movie: Movie? {
+        didSet {
+            reviewsController.movie = movie
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .systemPink
         
         addSubview(reviewsLabel)
         reviewsLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 18, left: 16, bottom: 0, right: 0), size: .init(width: .zero, height: 20))
         
         addSubview(reviewsController.view)
-        reviewsController.view.anchor(top: reviewsLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
+        reviewsController.view.anchor(top: reviewsLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 0))
     }
     
     required init?(coder: NSCoder) {

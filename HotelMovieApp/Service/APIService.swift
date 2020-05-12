@@ -16,6 +16,14 @@ class Service {
     fileprivate let base_url = "https://api.themoviedb.org/3/"
     fileprivate let api_key = "?api_key=8708e6e442f4c7d558ae6aa51d79152b"
     
+    
+    func fetchReviews(movieId: Int, completion: @escaping (Result<ReviewResponse, Error>) -> () ) {
+        let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/reviews?api_key=8708e6e442f4c7d558ae6aa51d79152b"
+         
+        fetchGenericData(urlString: urlString, completion: completion)
+    }
+    
+    
     func fetchCredits(movieId: Int, completion: @escaping (Result<CreditsResponse, Error>) -> () ) {
         let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/credits?api_key=8708e6e442f4c7d558ae6aa51d79152b"
         print(urlString)

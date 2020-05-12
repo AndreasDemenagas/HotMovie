@@ -38,6 +38,17 @@ class ReviewCell: UICollectionViewCell {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
+    
+    var review: Review? {
+        didSet {
+            readFullLabel.isHidden = false
+            reviewerNameLabel.text = "By: \(review?.author ?? "No reviews...")"
+            
+            let modifiedText = review?.content.replacingOccurrences(of: "\r\n\r\n", with: " ")
+            
+            textLabel.text = modifiedText
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -49,6 +49,7 @@ class MovieDetailsController: UICollectionViewController {
         }
         
         let reviewsSectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewsSectionCellid, for: indexPath) as! ReviewsSectionCell
+        reviewsSectionCell.movie = movie 
         return reviewsSectionCell
     }
     
@@ -83,7 +84,7 @@ extension MovieDetailsController: UICollectionViewDelegateFlowLayout {
             return .init(width: view.frame.width, height: 200)
         }
         
-        return .init(width: view.frame.width, height: 400)
+        return .init(width: view.frame.width, height: 250)
     }
     
     fileprivate func getInfoCellHeight() -> CGFloat {

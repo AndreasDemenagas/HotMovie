@@ -18,6 +18,10 @@
 		F50DA8C8237883C70065CD2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50DA8C6237883C70065CD2B /* LaunchScreen.storyboard */; };
 		F50DA8D3237883C70065CD2B /* HotelMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8D2237883C70065CD2B /* HotelMovieAppTests.swift */; };
 		F50DA8DE237883C70065CD2B /* HotelMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8DD237883C70065CD2B /* HotelMovieAppUITests.swift */; };
+		F51D71152469793F00D27C81 /* DetailsCastSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D71142469793F00D27C81 /* DetailsCastSectionCell.swift */; };
+		F51D711724697B7A00D27C81 /* CastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D711624697B7A00D27C81 /* CastController.swift */; };
+		F51D711924697ED800D27C81 /* CastMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D711824697ED800D27C81 /* CastMemberCell.swift */; };
+		F51D711C246983AD00D27C81 /* CastModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D711B246983AD00D27C81 /* CastModels.swift */; };
 		F5469CA524602FFB00194D3D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5469CA424602FFB00194D3D /* MainTabBarController.swift */; };
 		F5469CA82460328D00194D3D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5469CA72460328D00194D3D /* HomeController.swift */; };
 		F5469CAA246034BE00194D3D /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5469CA9246034BE00194D3D /* AuthProtocols.swift */; };
@@ -38,6 +42,10 @@
 		F5A5C9C1245F381A001CF32C /* LoginInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9C0245F381A001CF32C /* LoginInputsView.swift */; };
 		F5A5C9C3245F383C001CF32C /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9C2245F383C001CF32C /* InputTextField.swift */; };
 		F5A5C9C5245F3868001CF32C /* RegisterInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9C4245F3868001CF32C /* RegisterInputsView.swift */; };
+		F5EC0720246AD8FE0059785D /* ReviewsSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EC071F246AD8FE0059785D /* ReviewsSectionCell.swift */; };
+		F5EC0722246AD9090059785D /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EC0721246AD9090059785D /* ReviewsController.swift */; };
+		F5EC0724246AD9120059785D /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EC0723246AD9120059785D /* ReviewCell.swift */; };
+		F5EC0726246ADDC70059785D /* ReviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EC0725246ADDC70059785D /* ReviewModels.swift */; };
 		F5F48D9D23870CCE004CE6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5F48D9C23870CCE004CE6BA /* GoogleService-Info.plist */; };
 		F5FB3A562468AFA0009FAEF6 /* MovieTrailersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB3A552468AFA0009FAEF6 /* MovieTrailersController.swift */; };
 		F5FB3A582468B217009FAEF6 /* MovieTrailerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB3A572468B217009FAEF6 /* MovieTrailerCell.swift */; };
@@ -85,6 +93,10 @@
 		F50DA8D9237883C70065CD2B /* HotelMovieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelMovieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50DA8DD237883C70065CD2B /* HotelMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMovieAppUITests.swift; sourceTree = "<group>"; };
 		F50DA8DF237883C70065CD2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51D71142469793F00D27C81 /* DetailsCastSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCastSectionCell.swift; sourceTree = "<group>"; };
+		F51D711624697B7A00D27C81 /* CastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastController.swift; sourceTree = "<group>"; };
+		F51D711824697ED800D27C81 /* CastMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastMemberCell.swift; sourceTree = "<group>"; };
+		F51D711B246983AD00D27C81 /* CastModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModels.swift; sourceTree = "<group>"; };
 		F5469CA424602FFB00194D3D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F5469CA72460328D00194D3D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		F5469CA9246034BE00194D3D /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
@@ -105,6 +117,10 @@
 		F5A5C9C0245F381A001CF32C /* LoginInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputsView.swift; sourceTree = "<group>"; };
 		F5A5C9C2245F383C001CF32C /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		F5A5C9C4245F3868001CF32C /* RegisterInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputsView.swift; sourceTree = "<group>"; };
+		F5EC071F246AD8FE0059785D /* ReviewsSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewsSectionCell.swift; path = HotelMovieApp/MovieDetails/Cast/ReviewsSectionCell.swift; sourceTree = SOURCE_ROOT; };
+		F5EC0721246AD9090059785D /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
+		F5EC0723246AD9120059785D /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		F5EC0725246ADDC70059785D /* ReviewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModels.swift; sourceTree = "<group>"; };
 		F5F48D9C23870CCE004CE6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5FB3A552468AFA0009FAEF6 /* MovieTrailersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailersController.swift; sourceTree = "<group>"; };
 		F5FB3A572468B217009FAEF6 /* MovieTrailerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerCell.swift; sourceTree = "<group>"; };
@@ -224,6 +240,16 @@
 			path = HotelMovieAppUITests;
 			sourceTree = "<group>";
 		};
+		F51D71132469790700D27C81 /* Cast */ = {
+			isa = PBXGroup;
+			children = (
+				F51D71142469793F00D27C81 /* DetailsCastSectionCell.swift */,
+				F51D711624697B7A00D27C81 /* CastController.swift */,
+				F51D711824697ED800D27C81 /* CastMemberCell.swift */,
+			);
+			path = Cast;
+			sourceTree = "<group>";
+		};
 		F5469CA62460327E00194D3D /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +281,8 @@
 			children = (
 				F559F78B2462D64000E8F5C7 /* SearchModels.swift */,
 				F5FB3A5A2468B3CE009FAEF6 /* VideoModels.swift */,
+				F51D711B246983AD00D27C81 /* CastModels.swift */,
+				F5EC0725246ADDC70059785D /* ReviewModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +299,8 @@
 		F581247824660D8600058B21 /* MovieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				F51D71132469790700D27C81 /* Cast */,
+				F5EC071E246AD8E60059785D /* Reviews */,
 				F5FB3A542468AF91009FAEF6 /* Trailers */,
 				F581247924660DCB00058B21 /* MovieDetailsController.swift */,
 				F581247B24660E2D00058B21 /* DetailsPosterHeader.swift */,
@@ -317,6 +347,16 @@
 				F5A5C9C4245F3868001CF32C /* RegisterInputsView.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		F5EC071E246AD8E60059785D /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				F5EC071F246AD8FE0059785D /* ReviewsSectionCell.swift */,
+				F5EC0721246AD9090059785D /* ReviewsController.swift */,
+				F5EC0723246AD9120059785D /* ReviewCell.swift */,
+			);
+			path = Reviews;
 			sourceTree = "<group>";
 		};
 		F5FB3A542468AF91009FAEF6 /* Trailers */ = {
@@ -568,6 +608,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5A5C9B8245F369E001CF32C /* Extension_LayoutAnchors.swift in Sources */,
+				F51D71152469793F00D27C81 /* DetailsCastSectionCell.swift in Sources */,
+				F5EC0726246ADDC70059785D /* ReviewModels.swift in Sources */,
 				F559F7862462D31600E8F5C7 /* APIService.swift in Sources */,
 				F559F78C2462D64000E8F5C7 /* SearchModels.swift in Sources */,
 				F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */,
@@ -579,16 +621,22 @@
 				F5A5C9B4245F3639001CF32C /* LoginController.swift in Sources */,
 				F5A5C9B6245F3646001CF32C /* RegistrationController.swift in Sources */,
 				F50556082466E5E10043C1F9 /* DetailsInformationCell.swift in Sources */,
+				F5EC0720246AD8FE0059785D /* ReviewsSectionCell.swift in Sources */,
 				F5469CAA246034BE00194D3D /* AuthProtocols.swift in Sources */,
+				F51D711924697ED800D27C81 /* CastMemberCell.swift in Sources */,
 				F5FB3A562468AFA0009FAEF6 /* MovieTrailersController.swift in Sources */,
 				F559F7942462E48000E8F5C7 /* UILabel+Date.swift in Sources */,
 				F559F7892462D33400E8F5C7 /* SearchController.swift in Sources */,
+				F51D711724697B7A00D27C81 /* CastController.swift in Sources */,
 				F5FB3A5B2468B3CE009FAEF6 /* VideoModels.swift in Sources */,
 				F5FB3A582468B217009FAEF6 /* MovieTrailerCell.swift in Sources */,
 				F559F78E2462D6D400E8F5C7 /* SearchCell.swift in Sources */,
+				F5EC0724246AD9120059785D /* ReviewCell.swift in Sources */,
+				F51D711C246983AD00D27C81 /* CastModels.swift in Sources */,
 				F559F7922462E44C00E8F5C7 /* UIImage+Cache.swift in Sources */,
 				F5469CA82460328D00194D3D /* HomeController.swift in Sources */,
 				F50556042466E3A80043C1F9 /* DetailsProtocols.swift in Sources */,
+				F5EC0722246AD9090059785D /* ReviewsController.swift in Sources */,
 				F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */,
 				F5A5C9C3245F383C001CF32C /* InputTextField.swift in Sources */,
 				F5A5C9C1245F381A001CF32C /* LoginInputsView.swift in Sources */,

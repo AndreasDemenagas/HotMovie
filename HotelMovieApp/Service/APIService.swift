@@ -17,7 +17,6 @@ class Service {
     fileprivate let api_key = "?api_key=8708e6e442f4c7d558ae6aa51d79152b"
     
     func fetchCredits(movieId: Int, completion: @escaping (Result<CreditsResponse, Error>) -> () ) {
-        
         let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/credits?api_key=8708e6e442f4c7d558ae6aa51d79152b"
         print(urlString)
         

@@ -13,6 +13,7 @@ class MovieDetailsController: UICollectionViewController {
     fileprivate let posterHeaderId = "posterHeaderId"
     fileprivate let infoCellId = "infocellid"
     fileprivate let castSectionCellid = "castSectionCellid"
+    fileprivate let reviewsSectionCellid = "reviewsSectionCellid"
     
     var movie: Movie?
     
@@ -22,6 +23,7 @@ class MovieDetailsController: UICollectionViewController {
         collectionView.register(DetailsPosterHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: posterHeaderId)
         collectionView.register(DetailsInfoCell.self, forCellWithReuseIdentifier: infoCellId)
         collectionView.register(MovieDetailsCastSectionCell.self, forCellWithReuseIdentifier: castSectionCellid)
+        collectionView.register(ReviewsSectionCell.self, forCellWithReuseIdentifier: reviewsSectionCellid)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -40,9 +42,14 @@ class MovieDetailsController: UICollectionViewController {
             return infoCell
         }
         
-        let castSectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: castSectionCellid, for: indexPath) as! MovieDetailsCastSectionCell
-        castSectionCell.movie = movie
-        return castSectionCell
+        if indexPath.section == 1 {
+            let castSectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: castSectionCellid, for: indexPath) as! MovieDetailsCastSectionCell
+            castSectionCell.movie = movie
+            return castSectionCell
+        }
+        
+        let reviewsSectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewsSectionCellid, for: indexPath) as! ReviewsSectionCell
+        return reviewsSectionCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -53,7 +60,7 @@ class MovieDetailsController: UICollectionViewController {
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,7 +79,11 @@ extension MovieDetailsController: UICollectionViewDelegateFlowLayout {
             return .init(width: view.frame.width, height: height)
         }
         
-        return .init(width: view.frame.width, height: 200)
+        if indexPath.section == 1 {
+            return .init(width: view.frame.width, height: 200)
+        }
+        
+        return .init(width: view.frame.width, height: 400)
     }
     
     fileprivate func getInfoCellHeight() -> CGFloat {

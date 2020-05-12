@@ -18,10 +18,10 @@ class ReviewCell: UICollectionViewCell {
         return v
     }()
     
-    let reviewerNameLabel = UILabel(text: "John Doe", textColor: .lightGray, font: .boldSystemFont(ofSize: 16))
+    let reviewerNameLabel = UILabel(text: "We are sorry :(", textColor: .lightGray, font: .boldSystemFont(ofSize: 16))
     
     let textLabel: UILabel = {
-        let l =  UILabel(text: " ", textColor: .lightGray, font: .systemFont(ofSize: 16), alignment: .justified, numberOfLines: 0)
+        let l =  UILabel(text: "The are no reviews available for this movie", textColor: .lightGray, font: .systemFont(ofSize: 16), alignment: .justified, numberOfLines: 0)
         l.lineBreakMode = .byWordWrapping
         return l
     }()

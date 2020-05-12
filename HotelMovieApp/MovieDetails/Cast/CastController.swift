@@ -16,7 +16,9 @@ class CastController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     var movie: Movie? {
         didSet {
-            fetchCastMembers()
+            if movieCastMembers == nil {
+                fetchCastMembers()
+            }
         }
     }
     

@@ -16,7 +16,9 @@ class ReviewsController: UICollectionViewController, UICollectionViewDelegateFlo
     
     var movie: Movie? {
         didSet {
-            fetchMovieReviews()
+            if reviews == nil {
+                fetchMovieReviews()
+            }
         }
     }
     
@@ -40,11 +42,17 @@ class ReviewsController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if reviews?.count == 0 {
+            return 1
+        }
         return reviews?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let reviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewcell, for: indexPath) as! ReviewCell
+        if reviews?.count == 0 {
+            return reviewCell
+        }
         reviewCell.review = reviews?[indexPath.item]
         return reviewCell
     }

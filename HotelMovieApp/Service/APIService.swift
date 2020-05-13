@@ -16,19 +16,38 @@ class Service {
     fileprivate let base_url = "https://api.themoviedb.org/3/"
     fileprivate let api_key = "?api_key=8708e6e442f4c7d558ae6aa51d79152b"
     
+    func fetchTopRated(completion: @escaping (Result<TopRatedMovies, Error>) -> () ) {
+        let urlString = "https://api.themoviedb.org/3/movie/top_rated?api_key=8708e6e442f4c7d558ae6aa51d79152b&region=US"
+        fetchGenericData(urlString: urlString, completion: completion)
+    }
+    
+    func fetchPopular(completion: @escaping (Result<PopularMovies, Error>) -> () ) {
+        let urlString = "https://api.themoviedb.org/3/movie/popular?api_key=8708e6e442f4c7d558ae6aa51d79152b&region=US"
+        fetchGenericData(urlString: urlString, completion: completion)
+    }
+    
+    
+    func fetchUpcoming(completion: @escaping (Result<UpcomingMovies, Error>) -> () ) {
+        let urlString = "https://api.themoviedb.org/3/movie/upcoming?api_key=8708e6e442f4c7d558ae6aa51d79152b&region=US"
+        fetchGenericData(urlString: urlString, completion: completion)
+    }
+    
+    
+    func fetchNowPlaying(completion: @escaping (Result<NowPlayingMovies, Error>) -> () ) {
+        let urlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=8708e6e442f4c7d558ae6aa51d79152b&region=US"
+        fetchGenericData(urlString: urlString, completion: completion)
+    }
+    
     
     func fetchReviews(movieId: Int, completion: @escaping (Result<ReviewResponse, Error>) -> () ) {
         let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/reviews?api_key=8708e6e442f4c7d558ae6aa51d79152b"
-         
         fetchGenericData(urlString: urlString, completion: completion)
     }
     
     
     func fetchCredits(movieId: Int, completion: @escaping (Result<CreditsResponse, Error>) -> () ) {
         let urlString = "https://api.themoviedb.org/3/movie/\(movieId)/credits?api_key=8708e6e442f4c7d558ae6aa51d79152b"
-        print(urlString)
-        
-       fetchGenericData(urlString: urlString, completion: completion)
+        fetchGenericData(urlString: urlString, completion: completion)
     }
     
     func fetchMovieVideos(for id: Int, completion: @escaping (Result<VideoResponse, Error>) -> () ) {
@@ -45,6 +64,7 @@ class Service {
     }
     
     fileprivate func fetchGenericData<T: Decodable>(urlString: String, completion: @escaping (Result<T, Error>) -> ()) {
+//        print("HITTING API")
         guard let url = URL(string: urlString) else {            fatalError("Invalid URL")
         }
         

@@ -26,11 +26,21 @@ class HomeRowSectionCell: UICollectionViewCell {
         }
     }
     
+    weak var homeDelegate: HomeFeedDelegate? {
+        didSet {
+            moviesController.homeDelegate = homeDelegate
+        }
+    }
+    
+    var movies: [Movie]? {
+        didSet {
+            guard let movies = movies else { return }
+            moviesController.movies = movies
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .systemRed
-        
         setupCell()
     }
     

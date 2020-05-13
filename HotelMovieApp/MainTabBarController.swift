@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
         tabBar.tintColor = .white
         
         let searchController = navigationController(viewController: SearchController(), imageName: "search", title: "Search")
-        let homeController = navigationController(viewController: HomeController(), imageName: "home", title: "Home")
+        let homeController = navigationController(viewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()), imageName: "home", title: "Home")
         let listController = navigationController(viewController: UIViewController(), imageName: "list", title: "My List")
 
         viewControllers =  [homeController, listController, searchController]

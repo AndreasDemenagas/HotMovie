@@ -10,6 +10,9 @@
 		1EAC68486B0F8E93D649E72C /* Pods_HotelMovieAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB974C3411637D8E5B13D7C1 /* Pods_HotelMovieAppTests.framework */; };
 		59A95EA32630FE226B6B647B /* Pods_HotelMovieApp_HotelMovieAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AB320D00A0EFB5EAF031F4 /* Pods_HotelMovieApp_HotelMovieAppUITests.framework */; };
 		EDEE00A955824E0F4458AA53 /* Pods_HotelMovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE64F04DA1EA35486F2868 /* Pods_HotelMovieApp.framework */; };
+		F5001F6A246C247100EBE219 /* HomeRowSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5001F69246C247100EBE219 /* HomeRowSectionCell.swift */; };
+		F5001F6C246C262800EBE219 /* HomeMoviesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5001F6B246C262800EBE219 /* HomeMoviesController.swift */; };
+		F5001F6F246C26EE00EBE219 /* HomeMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5001F6E246C26EE00EBE219 /* HomeMovieCell.swift */; };
 		F50556042466E3A80043C1F9 /* DetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50556032466E3A80043C1F9 /* DetailsProtocols.swift */; };
 		F50556082466E5E10043C1F9 /* DetailsInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50556072466E5E10043C1F9 /* DetailsInformationCell.swift */; };
 		F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DA8BB237883C30065CD2B /* AppDelegate.swift */; };
@@ -80,6 +83,9 @@
 		DB45440A84F5D05361527E69 /* Pods-HotelMovieApp-HotelMovieAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelMovieApp-HotelMovieAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-HotelMovieApp-HotelMovieAppUITests/Pods-HotelMovieApp-HotelMovieAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5AB320D00A0EFB5EAF031F4 /* Pods_HotelMovieApp_HotelMovieAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotelMovieApp_HotelMovieAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14D6161F791F725EA071799 /* Pods-HotelMovieAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelMovieAppTests.release.xcconfig"; path = "Target Support Files/Pods-HotelMovieAppTests/Pods-HotelMovieAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F5001F69246C247100EBE219 /* HomeRowSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRowSectionCell.swift; sourceTree = "<group>"; };
+		F5001F6B246C262800EBE219 /* HomeMoviesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesController.swift; sourceTree = "<group>"; };
+		F5001F6E246C26EE00EBE219 /* HomeMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMovieCell.swift; sourceTree = "<group>"; };
 		F50556032466E3A80043C1F9 /* DetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProtocols.swift; sourceTree = "<group>"; };
 		F50556072466E5E10043C1F9 /* DetailsInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInformationCell.swift; sourceTree = "<group>"; };
 		F50DA8B8237883C30065CD2B /* HotelMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +262,9 @@
 			isa = PBXGroup;
 			children = (
 				F5469CA72460328D00194D3D /* HomeController.swift */,
+				F5001F69246C247100EBE219 /* HomeRowSectionCell.swift */,
+				F5001F6B246C262800EBE219 /* HomeMoviesController.swift */,
+				F5001F6E246C26EE00EBE219 /* HomeMovieCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -635,6 +644,7 @@
 				F50556082466E5E10043C1F9 /* DetailsInformationCell.swift in Sources */,
 				F5EC0720246AD8FE0059785D /* ReviewsSectionCell.swift in Sources */,
 				F5469CAA246034BE00194D3D /* AuthProtocols.swift in Sources */,
+				F5001F6A246C247100EBE219 /* HomeRowSectionCell.swift in Sources */,
 				F51D711924697ED800D27C81 /* CastMemberCell.swift in Sources */,
 				F5FB3A562468AFA0009FAEF6 /* MovieTrailersController.swift in Sources */,
 				F559F7942462E48000E8F5C7 /* UILabel+Date.swift in Sources */,
@@ -651,6 +661,8 @@
 				F5EC0722246AD9090059785D /* ReviewsController.swift in Sources */,
 				F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */,
 				F5A5C9C3245F383C001CF32C /* InputTextField.swift in Sources */,
+				F5001F6F246C26EE00EBE219 /* HomeMovieCell.swift in Sources */,
+				F5001F6C246C262800EBE219 /* HomeMoviesController.swift in Sources */,
 				F5A5C9C1245F381A001CF32C /* LoginInputsView.swift in Sources */,
 				F581247A24660DCB00058B21 /* MovieDetailsController.swift in Sources */,
 				F581247C24660E2D00058B21 /* DetailsPosterHeader.swift in Sources */,

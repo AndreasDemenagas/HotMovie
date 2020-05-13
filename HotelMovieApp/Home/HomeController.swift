@@ -8,13 +8,18 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: UICollectionViewController {
+    
+    fileprivate let homeRowCellId = "homecellid"
+    
+    fileprivate let sectionTitles = ["Now Playing", "Popular", "Upcoming", "Top Rated"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "exit"), style: .plain, target: self, action: #selector(handleSignOut))
+        collectionView.register(HomeRowSectionCell.self, forCellWithReuseIdentifier: homeRowCellId)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,5 +59,22 @@ class HomeController: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
     }
     
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let rowCell = collectionView.dequeueReusableCell(withReuseIdentifier: homeRowCellId, for: indexPath) as! HomeRowSectionCell
+        rowCell.sectionTitle = sectionTitles[indexPath.item]
+        return rowCell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+}
+
+extension HomeController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width, height: 300)
+    }
     
 }

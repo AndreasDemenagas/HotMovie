@@ -19,8 +19,10 @@ class MainTabBarController: UITabBarController {
         
         let searchController = navigationController(viewController: SearchController(), imageName: "search", title: "Search")
         let homeController = navigationController(viewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()), imageName: "home", title: "Home")
-        let listController = navigationController(viewController: UIViewController(), imageName: "list", title: "My List")
-
+        
+        let listVC = ListController(collectionViewLayout: UICollectionViewFlowLayout())
+        let listController = navigationController(viewController: listVC, imageName: "list-icon", title: "My List")
+        
         viewControllers =  [homeController, listController, searchController]
         
         UITabBarItem.appearance().titlePositionAdjustment = .init(horizontal: 0, vertical: -4)

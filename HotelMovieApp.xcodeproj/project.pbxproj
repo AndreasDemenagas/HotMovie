@@ -331,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				F5EC0727246AE68A0059785D /* Header = Footer */,
-				F5EC0728246AE6BD0059785D /* AddToListFooter.swift */,
 				F51D71132469790700D27C81 /* Cast */,
 				F5EC071E246AD8E60059785D /* Reviews */,
 				F5FB3A542468AF91009FAEF6 /* Trailers */,
@@ -395,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				F581247B24660E2D00058B21 /* DetailsPosterHeader.swift */,
+				F5EC0728246AE6BD0059785D /* AddToListFooter.swift */,
 			);
 			path = "Header = Footer";
 			sourceTree = "<group>";

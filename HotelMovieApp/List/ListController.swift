@@ -11,13 +11,19 @@ import UIKit
 class ListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     fileprivate let listCellid = "listcellid"
+    fileprivate let profileListHeaderid = "profileListHeaderid"
     
-    // TODO: noItemsLabel setup function has been disabled in viewDidLoad - Reactivate. 
     fileprivate let noItemsLabel: UILabel = {
         let label = UILabel(text: "You have no items in your list.\nPlease add one", font: .boldSystemFont(ofSize: 20), alignment: .center, numberOfLines: 0)
         label.lineBreakMode = .byWordWrapping
         return label
     }()
+    
+    var user: UserM? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +33,22 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         collectionView.contentInset = .init(top: 24, left: 24, bottom: 24, right: 24)
         collectionView.scrollIndicatorInsets = .init(top: 24, left: 0, bottom: 0, right: 0)
+        
+        collectionView.register(ListProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: profileListHeaderid)
         collectionView.register(ListCell.self, forCellWithReuseIdentifier: listCellid)
+        
+        fetchCurrentUser()
+    }
+    
+    fileprivate func fetchCurrentUser() {
+        FIRService.shared.fetchCurrentUser { (result) in
+            switch result {
+            case .failure(let error):
+                print("Failed to fetch current user ", error)
+            case .success(let user):
+                self.user = user 
+            }
+        }
     }
     
     fileprivate func setupNavigationBar() {
@@ -66,5 +87,20 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 35, left: 0, bottom: 0, right: 0)
+    }
+    
+    
+    //MARK: Header
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: profileListHeaderid, for: indexPath) as! ListProfileHeader
+        header.user = user
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.frame.width, height: 65)
+    }
     
 }

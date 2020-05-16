@@ -41,6 +41,8 @@
 		F559F7942462E48000E8F5C7 /* UILabel+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F559F7932462E48000E8F5C7 /* UILabel+Date.swift */; };
 		F581247A24660DCB00058B21 /* MovieDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F581247924660DCB00058B21 /* MovieDetailsController.swift */; };
 		F581247C24660E2D00058B21 /* DetailsPosterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F581247B24660E2D00058B21 /* DetailsPosterHeader.swift */; };
+		F595ECF4247018E500CAFDCA /* ListProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F595ECF3247018E500CAFDCA /* ListProfileHeader.swift */; };
+		F595ECF624701C1300CAFDCA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F595ECF524701C1300CAFDCA /* User.swift */; };
 		F5A5C9B4245F3639001CF32C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B3245F3639001CF32C /* LoginController.swift */; };
 		F5A5C9B6245F3646001CF32C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B5245F3646001CF32C /* RegistrationController.swift */; };
 		F5A5C9B8245F369E001CF32C /* Extension_LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */; };
@@ -123,6 +125,8 @@
 		F559F7932462E48000E8F5C7 /* UILabel+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Date.swift"; sourceTree = "<group>"; };
 		F581247924660DCB00058B21 /* MovieDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsController.swift; sourceTree = "<group>"; };
 		F581247B24660E2D00058B21 /* DetailsPosterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPosterHeader.swift; sourceTree = "<group>"; };
+		F595ECF3247018E500CAFDCA /* ListProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProfileHeader.swift; sourceTree = "<group>"; };
+		F595ECF524701C1300CAFDCA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5A5C9B3245F3639001CF32C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F5A5C9B5245F3646001CF32C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_LayoutAnchors.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 			children = (
 				F5001F76246C98EB00EBE219 /* ListController.swift */,
 				F5001F78246C9E5500EBE219 /* ListCell.swift */,
+				F595ECF3247018E500CAFDCA /* ListProfileHeader.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				F51D711B246983AD00D27C81 /* CastModels.swift */,
 				F5EC0725246ADDC70059785D /* ReviewModels.swift */,
 				F5001F70246C2AF100EBE219 /* HomeSectionModels.swift */,
+				F595ECF524701C1300CAFDCA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 				F50556082466E5E10043C1F9 /* DetailsInformationCell.swift in Sources */,
 				F5EC0720246AD8FE0059785D /* ReviewsSectionCell.swift in Sources */,
 				F5469CAA246034BE00194D3D /* AuthProtocols.swift in Sources */,
+				F595ECF4247018E500CAFDCA /* ListProfileHeader.swift in Sources */,
 				F5001F6A246C247100EBE219 /* HomeRowSectionCell.swift in Sources */,
 				F51D711924697ED800D27C81 /* CastMemberCell.swift in Sources */,
 				F5FB3A562468AFA0009FAEF6 /* MovieTrailersController.swift in Sources */,
@@ -675,6 +682,7 @@
 				F5469CA82460328D00194D3D /* HomeController.swift in Sources */,
 				F50556042466E3A80043C1F9 /* DetailsProtocols.swift in Sources */,
 				F5EC0722246AD9090059785D /* ReviewsController.swift in Sources */,
+				F595ECF624701C1300CAFDCA /* User.swift in Sources */,
 				F50DA8BE237883C30065CD2B /* SceneDelegate.swift in Sources */,
 				F5A5C9C3245F383C001CF32C /* InputTextField.swift in Sources */,
 				F5001F79246C9E5500EBE219 /* ListCell.swift in Sources */,

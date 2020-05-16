@@ -17,6 +17,23 @@ class FIRService {
         return Auth.auth().currentUser?.uid
     }
     
+    func fetchCurrentUser(completion: @escaping (Result<UserM, Error>) -> ()) {
+        guard let userId = getCurrentUserId() else {
+            return
+        }
+        
+        Database.database().reference().child("users").child(userId).observe(.value, with: { (snapshot) in
+            
+            guard let userDictionary = snapshot.value as? [String: Any] else { return }
+            let user = UserM(uid: userId, dict: userDictionary)
+            
+            completion(.success(user))
+            
+        }) { (error) in
+            completion(.failure(error))
+        }
+    }
+    
     func loginUser(with email: String, and password: String, completion: @escaping (Error?) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {

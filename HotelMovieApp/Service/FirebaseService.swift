@@ -2,124 +2,127 @@
 //  FirebaseService.swift
 //  HotelMovieApp
 //
-//  IB DP Computer Science IA
+//  Created by Andrew Demenagas on 4/5/20.
+//  Copyright © 2020 Andrew Demenagas. All rights reserved.
 //
 
 import Foundation
 import Firebase
 
-class FirebaseService {
+class FIRService {
     
-    static let shared = FirebaseService()
+    static let shared = FIRService()
     
-    func fetchUserList(completion: @escaping ([Movie]) -> () ) {
-        guard let userId = Auth.auth().currentUser?.uid else { return }
+    func fetchUserList(completion: @escaping (Result<[Movie], Error>) -> ()) {
+        guard let curUserId = getCurrentUserId() else { return }
         
-        let reference = Database.database().reference().child("lists").child(userId)
+        let listRef = Database.database().reference().child("list").child(curUserId)
         
         var movies = [Movie]()
         
-        let group = DispatchGroup()
+        let disGroup = DispatchGroup()
         
-        reference.observe(.childAdded, with: { (snapshot) in
-            guard let movieId = snapshot.value as? Int else { return }
+        listRef.observe(.childAdded, with: { (snapshot) in
+            disGroup.enter()
             
-            group.enter()
+            let movieId = snapshot.key
             
-            ApiService.shared.fetchMovieDetails(id: movieId) { (result) in
+            Service.shared.fetchMovie(id: movieId) { (result) in
                 switch result {
                 case .failure(let error):
-                    print("failed to fetched details...", error)
+                    print("Failed to GET movie -- from fetching list -- ", error)
                 case .success(let movie):
                     movies.append(movie)
-                    group.leave()
+                    disGroup.leave()
                 }
             }
             
-            group.notify(queue: .main) {
-                print("completion...")
-                completion(movies)
-            }
-    
-        }, withCancel: nil)
-    }
-    
-    func addMovieToList(movieId: Int, completion: @escaping () -> () ) {
-        guard let userId = Auth.auth().currentUser?.uid else { return }
-        
-        let values = [UUID().uuidString: movieId]
-        
-        let reference = Database.database().reference().child("lists").child(userId)
-        
-        reference.updateChildValues(values) { (error, reference) in
-            if let error = error {
-                print("adding to list error, ", error)
-                return
+            disGroup.notify(queue: .main) {
+                print("COMPLETING with \(movies.count)")
+                completion(.success(movies))
             }
             
-            print("movie: \(movieId) added to list....")
-            
-            completion() 
+        }) { (error) in
+            completion(.failure(error))
         }
     }
     
-    func loginUser(email: String, password: String, completion: @escaping (Error?) -> () ) {
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+    func addMovieToUserList(movie: Movie, completion: @escaping (Error?) -> ()) {
+        guard let curUserId = getCurrentUserId() else { return }
+        guard let movieId = movie.id else { return }
+        
+        let ref = Database.database().reference().child("list").child(curUserId)
+        
+        let values = [String(movieId): 1]
+        
+        ref.updateChildValues(values) { (error, reference) in
             if let error = error {
-                print("log in error, ", error)
                 completion(error)
                 return
             }
-            
-            print("logged in...")
             completion(nil)
         }
     }
     
-    func registerUser(username: String, email: String, password: String, profileImage: UIImage, completion: @escaping (Error?) -> () ) {
+    func getCurrentUserId() -> String? {
+        return Auth.auth().currentUser?.uid
+    }
+    
+    func fetchCurrentUser(completion: @escaping (Result<UserM, Error>) -> ()) {
+        guard let userId = getCurrentUserId() else {
+            return
+        }
         
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+        Database.database().reference().child("users").child(userId).observe(.value, with: { (snapshot) in
             
+            guard let userDictionary = snapshot.value as? [String: Any] else { return }
+            let user = UserM(uid: userId, dict: userDictionary)
+            
+            completion(.success(user))
+            
+        }) { (error) in
+            completion(.failure(error))
+        }
+    }
+    
+    func loginUser(with email: String, and password: String, completion: @escaping (Error?) -> ()) {
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 completion(error)
-                print("register error, ", error)
+                return
+            }
+            completion(nil)
+        }
+    }
+    
+    func logoutUser(completion: @escaping (Error?) -> ()) {
+        do {
+            try Auth.auth().signOut()
+            completion(nil)
+        }
+        
+        catch let error {
+            completion(error)
+        }
+    }
+    
+    func registerUser(email: String, username: String, password: String, completion: @escaping (Error?) -> ()) {
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                completion(error)
+                print("Register User Error, ", error)
                 return
             }
             
             guard let userId = result?.user.uid else { return }
-            let imageStorageName = UUID().uuidString
-            let storageRef = Storage.storage().reference().child("profile-images").child("\(imageStorageName).png")
-        
-            guard let imageData = profileImage.jpegData(compressionQuality: 0.1) else { return }
             
-            storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                
-                if let error = error {
-                    print("upload image error, ", error)
-                    completion(error)
-                    return
-                }
-                
-                print("image uploaded good....")
-                storageRef.downloadURL { (url, error) in
-                    if let error = error {
-                        print("url down error, ", error)
-                        completion(error)
-                        return
-                    }
-                    
-                    guard let urlString = url?.absoluteString else { return }
-                    
-                    let values = ["username": username, "email": email, "profileImageUrl": urlString]
-                    
-                    self.registerUserToDatabase(userId: userId, values: values, completion: completion)
-                }
-            }
+            let values = ["username": username, "email": email]
+            
+            self.registerUserToDatabase(userId: userId, values: values, completion: completion)
         }
-        
     }
     
-    func registerUserToDatabase(userId: String, values: [String: Any], completion: @escaping (Error?) -> () ) {
+    fileprivate func registerUserToDatabase(userId: String, values: [String: Any], completion: @escaping (Error?) -> () ) {
         print("register to db....")
         let reference = Database.database().reference().child("users").child(userId)
         
@@ -133,5 +136,10 @@ class FirebaseService {
             completion(nil)
         }
     }
-    
+
 }
+
+//
+//let values = ["username": username, "email": email, "profileImageUrl": urlString]
+//
+//self.registerUserToDatabase(userId: userId, values: values, completion: completion)

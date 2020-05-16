@@ -38,7 +38,6 @@ class FIRService {
             }
             
             disGroup.notify(queue: .main) {
-                print("COMPLETING with \(movies.count)")
                 completion(.success(movies))
             }
             

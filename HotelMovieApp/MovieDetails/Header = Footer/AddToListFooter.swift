@@ -21,6 +21,10 @@ class AddToListFooter: UICollectionReusableView {
         return imgView
     }()
     
+    var movie: Movie? 
+    
+    weak var delegate: AddToListDelegate? 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -34,6 +38,7 @@ class AddToListFooter: UICollectionReusableView {
     }
     
     @objc fileprivate func handleTapAddToList() {
+        delegate?.didTapAddToList()
         UIView.animate(withDuration: 0.3) {
             self.addButton.image = UIImage(named: "heart-filled-red")
         }

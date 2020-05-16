@@ -15,3 +15,7 @@ protocol DetailsHeaderDelegate: AnyObject {
 protocol TrailersDelegate {
     func didTapShowTrailers()
 }
+
+protocol AddToListDelegate: AnyObject {
+    func didTapAddToList()
+}

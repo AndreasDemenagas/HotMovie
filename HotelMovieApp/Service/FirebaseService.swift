@@ -13,6 +13,23 @@ class FIRService {
     
     static let shared = FIRService()
     
+    func addMovieToUserList(movie: Movie, completion: @escaping (Error?) -> ()) {
+        guard let curUserId = getCurrentUserId() else { return }
+        guard let movieId = movie.id else { return }
+        
+        let ref = Database.database().reference().child("list").child(curUserId)
+        
+        let values = [String(movieId): 1]
+        
+        ref.updateChildValues(values) { (error, reference) in
+            if let error = error {
+                completion(error)
+                return
+            }
+            completion(nil)
+        }
+    }
+    
     func getCurrentUserId() -> String? {
         return Auth.auth().currentUser?.uid
     }

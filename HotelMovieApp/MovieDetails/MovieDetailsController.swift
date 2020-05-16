@@ -38,6 +38,7 @@ class MovieDetailsController: UICollectionViewController {
         }
         
         let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: addToListFooterId, for: indexPath) as! AddToListFooter
+        footer.delegate = self
         return footer
     }
     
@@ -126,7 +127,7 @@ extension MovieDetailsController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: Custom Delegation
-extension MovieDetailsController: DetailsHeaderDelegate, TrailersDelegate {
+extension MovieDetailsController: DetailsHeaderDelegate, TrailersDelegate, AddToListDelegate {
     func didCancel() {
         dismiss(animated: true, completion: nil)
     }
@@ -135,5 +136,17 @@ extension MovieDetailsController: DetailsHeaderDelegate, TrailersDelegate {
         let trailersController = MovieTrailersController()
         trailersController.movie = movie
         present(UINavigationController(rootViewController: trailersController), animated: true)
+    }
+    
+    func didTapAddToList() {
+        print("Adding to list movie \(movie?.title), \(movie?.id)")
+        guard let movie = movie else { return }
+        FIRService.shared.addMovieToUserList(movie: movie) { (error) in
+            if let error = error {
+                print("Error adding movie to list...", error)
+                return
+            }
+            print("MOVIE ADDED TO LIST ")
+        }
     }
 }

@@ -13,5 +13,5 @@ protocol LoginDelegate {
 }
 
 protocol RegisterDelegate {
-    func didTapRegister(with username: String, email: String, and password: String) 
+    func didTapRegister(with username: String, email: String, and password: String)
 }

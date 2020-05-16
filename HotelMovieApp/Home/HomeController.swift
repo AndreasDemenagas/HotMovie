@@ -31,6 +31,11 @@ class HomeController: UICollectionViewController, HomeFeedDelegate {
         fetchHomeSections()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfUserSignedIn()
+    }
+    
     func fetchHomeSections() {
         let dispatchGroup = DispatchGroup()
         
@@ -105,11 +110,6 @@ class HomeController: UICollectionViewController, HomeFeedDelegate {
                 completion()
             }
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        checkIfUserSignedIn()
     }
     
     fileprivate func checkIfUserSignedIn() {

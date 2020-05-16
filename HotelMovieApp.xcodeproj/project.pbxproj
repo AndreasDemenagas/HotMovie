@@ -45,7 +45,6 @@
 		F5A5C9B6245F3646001CF32C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B5245F3646001CF32C /* RegistrationController.swift */; };
 		F5A5C9B8245F369E001CF32C /* Extension_LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */; };
 		F5A5C9BB245F3739001CF32C /* UIKit+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9BA245F3739001CF32C /* UIKit+Init.swift */; };
-		F5A5C9BF245F3792001CF32C /* ProfilePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9BE245F3792001CF32C /* ProfilePickerController.swift */; };
 		F5A5C9C1245F381A001CF32C /* LoginInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9C0245F381A001CF32C /* LoginInputsView.swift */; };
 		F5A5C9C3245F383C001CF32C /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9C2245F383C001CF32C /* InputTextField.swift */; };
 		F5A5C9C5245F3868001CF32C /* RegisterInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C9C4245F3868001CF32C /* RegisterInputsView.swift */; };
@@ -128,7 +127,6 @@
 		F5A5C9B5245F3646001CF32C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F5A5C9B7245F369E001CF32C /* Extension_LayoutAnchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_LayoutAnchors.swift; sourceTree = "<group>"; };
 		F5A5C9BA245F3739001CF32C /* UIKit+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Init.swift"; sourceTree = "<group>"; };
-		F5A5C9BE245F3792001CF32C /* ProfilePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePickerController.swift; sourceTree = "<group>"; };
 		F5A5C9C0245F381A001CF32C /* LoginInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputsView.swift; sourceTree = "<group>"; };
 		F5A5C9C2245F383C001CF32C /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		F5A5C9C4245F3868001CF32C /* RegisterInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputsView.swift; sourceTree = "<group>"; };
@@ -374,7 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				F5A5C9B5245F3646001CF32C /* RegistrationController.swift */,
-				F5A5C9BE245F3792001CF32C /* ProfilePickerController.swift */,
 				F5A5C9C4245F3868001CF32C /* RegisterInputsView.swift */,
 			);
 			path = Registration;
@@ -655,7 +652,6 @@
 				F559F78C2462D64000E8F5C7 /* SearchModels.swift in Sources */,
 				F50DA8BC237883C30065CD2B /* AppDelegate.swift in Sources */,
 				F5469CA524602FFB00194D3D /* MainTabBarController.swift in Sources */,
-				F5A5C9BF245F3792001CF32C /* ProfilePickerController.swift in Sources */,
 				F5469CAC24604B8500194D3D /* FirebaseService.swift in Sources */,
 				F5A5C9BB245F3739001CF32C /* UIKit+Init.swift in Sources */,
 				F5A5C9C5245F3868001CF32C /* RegisterInputsView.swift in Sources */,

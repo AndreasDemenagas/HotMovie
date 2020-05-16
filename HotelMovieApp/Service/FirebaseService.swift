@@ -38,7 +38,7 @@ class FIRService {
         }
     }
     
-    func registerUser(email: String, username: String, password: String, profileImage: UIImage, completion: @escaping (Error?) -> ()) {
+    func registerUser(email: String, username: String, password: String, completion: @escaping (Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 completion(error)
@@ -47,32 +47,10 @@ class FIRService {
             }
             
             guard let userId = result?.user.uid else { return }
-            let imageName = UUID().uuidString
-            let storageRef = Storage.storage().reference().child("profile-images").child("\(imageName).png")
-            guard let imageData = profileImage.jpegData(compressionQuality: 0.1) else { return }
             
-            storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                if let error = error {
-                    completion(error)
-                    print("Image upload error", error)
-                    return
-                }
-                
-                print("Image UPLOADED")
-                storageRef.downloadURL { (url, error) in
-                    if let error = error {
-                        completion(error)
-                        print("URL Error", error)
-                        return
-                    }
-                    
-                    guard let urlString = url?.absoluteString else { return }
-                    
-                    let values = ["username": username, "email": email, "profileImageUrl": urlString]
-                    
-                    self.registerUserToDatabase(userId: userId, values: values, completion: completion)
-                }
-            }
+            let values = ["username": username, "email": email]
+            
+            self.registerUserToDatabase(userId: userId, values: values, completion: completion)
         }
     }
     
@@ -92,3 +70,8 @@ class FIRService {
     }
 
 }
+
+//
+//let values = ["username": username, "email": email, "profileImageUrl": urlString]
+//
+//self.registerUserToDatabase(userId: userId, values: values, completion: completion)

@@ -10,16 +10,10 @@ import UIKit
 
 class RegistrationController: UIViewController, RegisterDelegate {
     
-    lazy var profileImageView: UIImageView = {
-        let iv = UIImageView(image: UIImage(named: "plus_photo")?.withRenderingMode(.alwaysTemplate))
-        iv.tintColor = UIColor.init(white: 1, alpha: 0.5)
-        iv.contentMode = .scaleAspectFit
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectImage)))
-        iv.isUserInteractionEnabled = true
-        iv.layer.masksToBounds = true
-        iv.clipsToBounds = true
-        return iv
+    let registerLabel: UILabel = {
+        let l = UILabel(text: "Register", font: .boldSystemFont(ofSize: 45))
+        l.adjustsFontSizeToFitWidth = true
+        return l
     }()
     
     lazy var registerInputsView: RegisterInputsView = {
@@ -43,15 +37,12 @@ class RegistrationController: UIViewController, RegisterDelegate {
         setupContainerView()
         setupInputs()
         setupKeyboardObserversAndTap()
-        
-        print(view.frame.height)
     }
     
     func didTapRegister(with username: String, email: String, and password: String) {
-        guard let image = profileImageView.image else { return }
-        FIRService.shared.registerUser(email: email, username: username, password: password, profileImage: image) { (error) in
+        FIRService.shared.registerUser(email: email, username: username, password: password) { (error) in
             if let error = error {
-                print("TRY AGAIN", error)
+                print("Register Error, ", error)
                 return
             }
             
@@ -83,18 +74,6 @@ class RegistrationController: UIViewController, RegisterDelegate {
         }
     }
     
-    @objc func handleSelectImage() {
-        let pickerController = ProfileImagePickerController()
-        pickerController.isModalInPresentation = true
-        pickerController.signUpController = self
-        pickerController.allowsEditing = true
-        pickerController.modalPresentationStyle = .fullScreen
-        present(pickerController, animated: true, completion: nil)
-    }
-    
-    @objc func handleRegisterUser() {
-    }
-    
     @objc private func handleBackToLogin() {
         dismiss(animated: true, completion: nil)
     }
@@ -118,15 +97,14 @@ class RegistrationController: UIViewController, RegisterDelegate {
         
         registerInputsView.heightAnchor.constraint(equalToConstant: height).isActive = true
         registerInputsView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -64).isActive = true
+        
+        view.addSubview(registerLabel)
+        registerLabel.anchor(top: nil, leading: registerInputsView.leadingAnchor, bottom: registerInputsView.topAnchor, trailing: registerInputsView.trailingAnchor, padding: .init(top: 0, left: 24, bottom: 24, right: 0), size: .init(width: .zero, height: 40))
     }
     
     fileprivate func setupInputs() {
         view.addSubview(backToLogin)
         backToLogin.anchor(top: registerInputsView.bottomAnchor, leading: registerInputsView.leadingAnchor, bottom: nil, trailing: registerInputsView.trailingAnchor, padding: .init(top: 24, left: 0, bottom: 0, right: 0), size: .init(width: .zero, height: 30))
-        
-        view.addSubview(profileImageView)
-        profileImageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: registerInputsView.topAnchor, trailing: nil, padding: .init(top: 12, left: 0, bottom: 12, right: 0))
-        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }

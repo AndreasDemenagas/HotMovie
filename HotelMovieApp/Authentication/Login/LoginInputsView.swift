@@ -6,7 +6,6 @@
 //  Copyright © 2020 Andrew Demenagas. All rights reserved.
 //
 
-
 import UIKit
 
 class LoginInputView: UIView {

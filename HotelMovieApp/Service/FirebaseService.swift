@@ -13,6 +13,40 @@ class FIRService {
     
     static let shared = FIRService()
     
+    func fetchUserList(completion: @escaping (Result<[Movie], Error>) -> ()) {
+        guard let curUserId = getCurrentUserId() else { return }
+        
+        let listRef = Database.database().reference().child("list").child(curUserId)
+        
+        var movies = [Movie]()
+        
+        let disGroup = DispatchGroup()
+        
+        listRef.observe(.childAdded, with: { (snapshot) in
+            disGroup.enter()
+            
+            let movieId = snapshot.key
+            
+            Service.shared.fetchMovie(id: movieId) { (result) in
+                switch result {
+                case .failure(let error):
+                    print("Failed to GET movie -- from fetching list -- ", error)
+                case .success(let movie):
+                    movies.append(movie)
+                    disGroup.leave()
+                }
+            }
+            
+            disGroup.notify(queue: .main) {
+                print("COMPLETING with \(movies.count)")
+                completion(.success(movies))
+            }
+            
+        }) { (error) in
+            completion(.failure(error))
+        }
+    }
+    
     func addMovieToUserList(movie: Movie, completion: @escaping (Error?) -> ()) {
         guard let curUserId = getCurrentUserId() else { return }
         guard let movieId = movie.id else { return }

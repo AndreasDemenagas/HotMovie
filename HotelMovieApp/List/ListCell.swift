@@ -22,6 +22,20 @@ class ListCell: UICollectionViewCell {
         return imgView
     }()
     
+    var movie: Movie? {
+        didSet {
+            guard let movie = movie else { return }
+            
+            if let posterPath = movie.poster_path {
+                let urlString = Service.smallImageUrl + posterPath
+                posterImageView.loadImageFromCacheOrDownload(urlString: urlString)
+                return
+            }
+            
+            posterImageView.image = UIImage(named: "no-image")
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

@@ -25,19 +25,42 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
+    var movies: [Movie]? {
+        didSet {
+            noItemsLabel.isHidden = true
+            collectionView.reloadData()
+            collectionView.alwaysBounceVertical = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
-        //setupNoItemsLabel()
+        setupNoItemsLabel()
+        setupCollectionView()
         
+        fetchCurrentUser()
+        fetchUserList()
+    }
+    
+    fileprivate func setupCollectionView() {
         collectionView.contentInset = .init(top: 24, left: 24, bottom: 24, right: 24)
         collectionView.scrollIndicatorInsets = .init(top: 24, left: 0, bottom: 0, right: 0)
         
         collectionView.register(ListProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: profileListHeaderid)
         collectionView.register(ListCell.self, forCellWithReuseIdentifier: listCellid)
-        
-        fetchCurrentUser()
+    }
+    
+    fileprivate func fetchUserList() {
+        FIRService.shared.fetchUserList { (result) in
+            switch result {
+            case.failure(let error):
+                print("Error in fetching user list... ", error)
+            case.success(let movies):
+                self.movies = movies
+            }
+        }
     }
     
     fileprivate func fetchCurrentUser() {
@@ -62,11 +85,12 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     fileprivate func setupNoItemsLabel() {
         view.addSubview(noItemsLabel)
-        noItemsLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 48, left: 16, bottom: 0, right: 0), size: .init(width: view.frame.width - 32, height: 50))
+        noItemsLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 200, left: 16, bottom: 0, right: 0), size: .init(width: view.frame.width - 32, height: 50))
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listCellid, for: indexPath) as! ListCell
+        cell.movie = movies?[indexPath.item]
         return cell
     }
     
@@ -76,7 +100,7 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return movies?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -30,4 +30,6 @@ struct Movie: Decodable {
     let vote_average: Double?
     let overview: String?
     let release_date: String?
+    
+    var isInList: Bool? = false 
 }

@@ -39,6 +39,7 @@ class MovieDetailsController: UICollectionViewController {
         
         let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: addToListFooterId, for: indexPath) as! AddToListFooter
         footer.delegate = self
+        footer.movie = movie
         return footer
     }
     

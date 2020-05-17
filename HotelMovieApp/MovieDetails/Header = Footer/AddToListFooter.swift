@@ -21,7 +21,11 @@ class AddToListFooter: UICollectionReusableView {
         return imgView
     }()
     
-    var movie: Movie? 
+    var movie: Movie? {
+        didSet {
+            fetchIfInList()
+        }
+    }
     
     weak var delegate: AddToListDelegate? 
     
@@ -35,6 +39,21 @@ class AddToListFooter: UICollectionReusableView {
         
         addSubview(addToListLabel)
         addToListLabel.fillSuperView(padding: .init(top: 0, left: 16, bottom: 0, right: 66))
+    }
+    
+    fileprivate func fetchIfInList() {
+        guard let movieId = movie?.id else { return }
+        FIRService.shared.checkIfMovieInList(movieId: String(movieId)) { (value) in
+            
+            if value == 1 {
+                self.addToListLabel.text = "Already in list"
+                self.addButton.image = UIImage(named: "heart-filled-red")
+                return
+            }
+            
+            print("Movie NOT in list")
+            
+        }
     }
     
     @objc fileprivate func handleTapAddToList() {

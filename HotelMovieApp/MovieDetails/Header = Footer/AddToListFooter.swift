@@ -52,7 +52,6 @@ class AddToListFooter: UICollectionReusableView {
             }
             
             print("Movie NOT in list")
-            
         }
     }
     

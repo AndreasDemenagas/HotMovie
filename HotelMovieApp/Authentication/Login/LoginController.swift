@@ -30,6 +30,8 @@ class LoginController: UIViewController, LoginDelegate {
         l.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handlePresentSignUp)))
         return l
     }()
+    
+    var authError: AuthError?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,12 +69,36 @@ class LoginController: UIViewController, LoginDelegate {
     }
     
     func didTapLogin(with email: String, and password: String) {
+        if !Validator.isValidEmail(email) {
+            authError = .invalidEmail
+            presentErrorAlert(authError: authError!)
+            return
+        }
+        
+        if !Validator.isValidPassword(password) {
+            authError = .invalidPassword
+            presentErrorAlert(authError: authError!)
+            return
+        }
+        
         FIRService.shared.loginUser(with: email, and: password) { (error) in
             if let error = error {
-                print("Login error", error)
+                Alert.shared.unexpectedError(on: self)
+                print("Login error", error.localizedDescription)
                 return
             }
             self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func presentErrorAlert(authError: AuthError) {
+        switch authError {
+        case .invalidEmail:
+            Alert.shared.invalidEmailAlert(on: self)
+        case .invalidPassword:
+            Alert.shared.invalidPassword(on: self)
+        default:
+            Alert.shared.unexpectedError(on: self)
         }
     }
     

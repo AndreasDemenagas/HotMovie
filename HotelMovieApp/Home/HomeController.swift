@@ -119,7 +119,12 @@ class HomeController: UICollectionViewController, HomeFeedDelegate {
     }
     
     @objc func handleSignOut() {
-        self.performLogOut()
+        Alert.shared.signOutConfirm(on: self) { [weak self] (action) in
+            if let title = action.title, title == "Log out" {
+                self?.performLogOut()
+                return
+            }
+        }
     }
     
     func didTapHomeMovie(movie: Movie?) {

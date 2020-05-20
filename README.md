@@ -26,9 +26,11 @@ Simple iOS application for Hotel Movie Rental Services. Built using Swift, Googl
     <img src="Screens/home.png" width=276 />
     <img src="Screens/search.png" width=276 />
     <img src="Screens/details-1.png" width=276 />
+    <br>
     <img src="Screens/details-2.png" width=276 />
     <img src="Screens/trailers.png" width=276 />
     <img src="Screens/list.png" width=276 />
+    <br>
     <img src="Screens/login.png" width=276 />
     <img src="Screens/register.png" width=276 />
 </p>

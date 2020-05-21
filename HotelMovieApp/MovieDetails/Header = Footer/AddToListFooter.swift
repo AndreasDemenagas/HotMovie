@@ -27,6 +27,8 @@ class AddToListFooter: UICollectionReusableView {
         }
     }
     
+    var isInList: Bool?
+    
     weak var delegate: AddToListDelegate? 
     
     override init(frame: CGRect) {
@@ -42,16 +44,30 @@ class AddToListFooter: UICollectionReusableView {
     }
     
     fileprivate func fetchIfInList() {
+        if isInList != nil {
+            return
+        }
+        
         guard let movieId = movie?.id else { return }
         FIRService.shared.checkIfMovieInList(movieId: String(movieId)) { (value) in
             
             if value == 1 {
-                self.addToListLabel.text = "Already in list"
-                self.addButton.image = UIImage(named: "heart-filled-red")
+                self.isInList = true
+                self.setupImageAndLabel()
                 return
             }
             
-            print("Movie NOT in list")
+            self.isInList = false
+            self.setupImageAndLabel()
+        }
+    }
+    
+    fileprivate func setupImageAndLabel() {
+        assert(isInList != nil, "Can't pass nil isInList")
+        
+        if isInList! {
+            addToListLabel.text = "Already in list"
+            addButton.image = UIImage(named: "heart-filled-red")
         }
     }
     

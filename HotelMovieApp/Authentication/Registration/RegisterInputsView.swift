@@ -38,7 +38,9 @@ class RegisterInputsView: UIView {
     var delegate: RegisterDelegate?
     
     @objc func handleRegisterUser() {
-        guard let email = emailTextField.text, let username = usernameTextField.text, let password = passwordTextField.text else { return }
+        let username = usernameTextField.text
+        let email = emailTextField.text
+        let password = passwordTextField.text
         delegate?.didTapRegister(with: username, email: email, and: password)
     }
     

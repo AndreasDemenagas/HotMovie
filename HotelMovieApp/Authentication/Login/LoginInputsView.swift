@@ -31,7 +31,8 @@ class LoginInputView: UIView {
     }()
     
     @objc func loginPressed() {
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        let email = emailTextField.text
+        let password = passwordTextField.text 
         delegate?.didTapLogin(with: email, and: password)
     }
     

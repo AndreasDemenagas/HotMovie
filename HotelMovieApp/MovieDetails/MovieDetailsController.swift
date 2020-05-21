@@ -140,7 +140,7 @@ extension MovieDetailsController: DetailsHeaderDelegate, TrailersDelegate, AddTo
     }
     
     func didTapAddToList() {
-        print("Adding to list movie \(movie?.title), \(movie?.id)")
+        print("Adding to list movie \(movie?.title ?? ""), \(movie?.id ?? 000)")
         guard let movie = movie else { return }
         FIRService.shared.addMovieToUserList(movie: movie) { (error) in
             if let error = error {

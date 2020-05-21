@@ -9,9 +9,9 @@
 import Foundation
 
 protocol LoginDelegate {
-    func didTapLogin(with email: String, and password: String)
+    func didTapLogin(with email: String?, and password: String?)
 }
 
 protocol RegisterDelegate {
-    func didTapRegister(with username: String, email: String, and password: String)
+    func didTapRegister(with username: String?, email: String?, and password: String?)
 }

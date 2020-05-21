@@ -30,7 +30,7 @@ class RegistrationController: UIViewController, RegisterDelegate {
         return l
     }()
     
-    var authError: AuthError?
+    var authError: ValidationError?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,45 +41,27 @@ class RegistrationController: UIViewController, RegisterDelegate {
         setupKeyboardObserversAndTap()
     }
     
-    func didTapRegister(with username: String, email: String, and password: String) {
-        if !Validator.isValidEmail(email) {
-            authError = .invalidEmail
-            presentErrorAlert(authError: authError!)
-            return
-        }
+    func didTapRegister(with username: String?, email: String?, and password: String?) {
         
-        if !Validator.isValidPassword(password) {
-            authError = .invalidPassword
-            presentErrorAlert(authError: authError!)
-            return
-        }
-        
-        if !Validator.validUsername(username) {
-            authError = .invalidUsername
-            presentErrorAlert(authError: authError!)
-            return
-        }
-        
-        FIRService.shared.registerUser(email: email, username: username, password: password) { (error) in
-            if let error = error {
-                Alert.shared.unexpectedError(on: self) 
-                print("Register Error, ", error)
-                return
-            }
+        do {
+            let email = try Validator.validateEmail(email)
+            let username = try Validator.validateUsername(username)
+            let password = try Validator.validatePassoword(password)
             
-            self.dismiss(animated: true, completion: nil)
+            FIRService.shared.registerUser(email: email, username: username, password: password) { (error) in
+                if let error = error {
+                    print("Registration error ", error)
+                    return
+                }
+                
+                self.dismiss(animated: true, completion: nil)
+            }
         }
-    }
-    
-    private func presentErrorAlert(authError: AuthError) {
-        switch authError {
-        case .invalidEmail:
-            Alert.shared.invalidEmailAlert(on: self)
-        case .invalidPassword:
-            Alert.shared.invalidPassword(on: self)
-        case .invalidUsername:
-            Alert.shared.emptyNameLabel(on: self)
+        
+        catch  {
+            print(error.localizedDescription)
         }
+        
     }
     
     fileprivate func setupKeyboardObserversAndTap() {
@@ -142,3 +124,14 @@ class RegistrationController: UIViewController, RegisterDelegate {
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
 }
+
+//
+//      FIRService.shared.registerUser(email: email, username: username, password: password) { (error) in
+////            if let error = error {
+////                Alert.shared.unexpectedError(on: self)
+////                print("Register Error, ", error)
+////                return
+////            }
+////
+////            self.dismiss(animated: true, completion: nil)
+////        }

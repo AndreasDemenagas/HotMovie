@@ -69,8 +69,8 @@ class Service {
     }
     
     fileprivate func fetchGenericData<T: Decodable>(urlString: String, completion: @escaping (Result<T, Error>) -> ()) {
-//        print("HITTING API")
-        guard let url = URL(string: urlString) else {            fatalError("Invalid URL")
+        guard let url = URL(string: urlString) else {
+            fatalError("Invalid URL")
         }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in

@@ -17,7 +17,7 @@ class FIRService {
         guard let curUserId = getCurrentUserId() else { return }
         
         let ref = Database.database().reference().child("list")
-        print(111111)
+        
         ref.child(curUserId).child(movieId).observeSingleEvent(of: .value, with: { (snap) in
             if let value = snap.value as? Int, value == 1 {
                 completion(1)
@@ -41,6 +41,7 @@ class FIRService {
         let disGroup = DispatchGroup()
         
         listRef.observe(.childAdded, with: { (snapshot) in
+            print("HELLO THERE")
             disGroup.enter()
             
             let movieId = snapshot.key
@@ -156,7 +157,3 @@ class FIRService {
 
 }
 
-//
-//let values = ["username": username, "email": email, "profileImageUrl": urlString]
-//
-//self.registerUserToDatabase(userId: userId, values: values, completion: completion)

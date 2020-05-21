@@ -38,10 +38,19 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         setupNavigationBar()
         setupNoItemsLabel()
-        setupCollectionView()
-        
         fetchCurrentUser()
-        fetchUserList()
+        setupCollectionView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if user == nil {
+            fetchCurrentUser()
+        }
+        
+        if movies == nil {
+            fetchUserList()
+        }
     }
     
     fileprivate func setupCollectionView() {
@@ -100,6 +109,7 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("LIST RELOAD")
         return movies?.count ?? 0
     }
     

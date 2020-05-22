@@ -11,7 +11,7 @@ import UIKit
 class LoginController: UIViewController, LoginDelegate {
     
     let movieDarkLabel: UILabel = {
-        let l = UILabel(text: "MovieRental", font: .boldSystemFont(ofSize: 45))
+        let l = UILabel(text: "MovieFriend", font: .boldSystemFont(ofSize: 45))
         l.adjustsFontSizeToFitWidth = true
         return l
     }()

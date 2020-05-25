@@ -35,7 +35,7 @@ class RegisterInputsView: UIView {
         return btn
     }()
     
-    var delegate: RegisterDelegate?
+    weak var delegate: RegisterDelegate?
     
     @objc func handleRegisterUser() {
         let username = usernameTextField.text

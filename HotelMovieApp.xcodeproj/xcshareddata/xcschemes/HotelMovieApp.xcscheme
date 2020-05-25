@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F50DA8B7237883C30065CD2B"
-               BuildableName = "HotelMovieApp.app"
+               BuildableName = "MovieFriend.app"
                BlueprintName = "HotelMovieApp"
                ReferencedContainer = "container:HotelMovieApp.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F50DA8B7237883C30065CD2B"
-            BuildableName = "HotelMovieApp.app"
+            BuildableName = "MovieFriend.app"
             BlueprintName = "HotelMovieApp"
             ReferencedContainer = "container:HotelMovieApp.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F50DA8B7237883C30065CD2B"
-            BuildableName = "HotelMovieApp.app"
+            BuildableName = "MovieFriend.app"
             BlueprintName = "HotelMovieApp"
             ReferencedContainer = "container:HotelMovieApp.xcodeproj">
          </BuildableReference>

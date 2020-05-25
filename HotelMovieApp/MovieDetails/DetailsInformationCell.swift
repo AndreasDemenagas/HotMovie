@@ -40,7 +40,7 @@ class DetailsInfoCell: UICollectionViewCell {
         }
     }
     
-    var trailersDelegate: TrailersDelegate? 
+    weak var trailersDelegate: TrailersDelegate? 
     
     override init(frame: CGRect) {
         super.init(frame: frame)

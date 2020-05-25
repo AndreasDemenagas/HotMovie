@@ -12,7 +12,7 @@ protocol DetailsHeaderDelegate: AnyObject {
     func didCancel()
 }
 
-protocol TrailersDelegate {
+protocol TrailersDelegate: AnyObject {
     func didTapShowTrailers()
 }
 

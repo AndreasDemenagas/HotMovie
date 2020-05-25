@@ -36,7 +36,7 @@ class LoginInputView: UIView {
         delegate?.didTapLogin(with: email, and: password)
     }
     
-    var delegate: LoginDelegate? 
+    weak var delegate: LoginDelegate? 
     
     override init(frame: CGRect) {
         super.init(frame: frame)

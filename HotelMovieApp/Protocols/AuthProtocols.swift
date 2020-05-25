@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol LoginDelegate {
+protocol LoginDelegate: AnyObject {
     func didTapLogin(with email: String?, and password: String?)
 }
 
-protocol RegisterDelegate {
+protocol RegisterDelegate: AnyObject {
     func didTapRegister(with username: String?, email: String?, and password: String?)
 }

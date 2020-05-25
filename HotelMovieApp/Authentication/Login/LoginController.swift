@@ -71,13 +71,14 @@ class LoginController: UIViewController, LoginDelegate {
             let email = try Validator.validateEmail(email)
             let password = try Validator.validatePassoword(password)
             
-            FIRService.shared.loginUser(with: email, and: password) { (error) in
+            FIRService.shared.loginUser(with: email, and: password) { [weak self] (error) in
                 if let error = error {
+                    guard let self = self else { return }
                     Alerts.shared.showAlertFromError(error: error, on: self)
                     print("Login error", error.localizedDescription)
                     return
                 }
-                self.dismiss(animated: true, completion: nil)
+                self?.dismiss(animated: true, completion: nil)
             }
         }
         catch {

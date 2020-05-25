@@ -62,23 +62,23 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     fileprivate func fetchUserList() {
-        FIRService.shared.fetchUserList { (result) in
+        FIRService.shared.fetchUserList { [weak self] (result) in
             switch result {
             case.failure(let error):
                 print("Error in fetching user list... ", error)
             case.success(let movies):
-                self.movies = movies
+                self?.movies = movies
             }
         }
     }
     
     fileprivate func fetchCurrentUser() {
-        FIRService.shared.fetchCurrentUser { (result) in
+        FIRService.shared.fetchCurrentUser { [weak self] (result) in
             switch result {
             case .failure(let error):
                 print("Failed to fetch current user ", error)
             case .success(let user):
-                self.user = user 
+                self?.user = user 
             }
         }
     }

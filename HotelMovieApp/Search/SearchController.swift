@@ -56,13 +56,13 @@ class SearchController: UITableViewController, UISearchBarDelegate {
     }
     
     fileprivate func performSearch(searchTerm: String) {
-        Service.shared.searchMovies(searchTerm: searchTerm) { (result) in
+        Service.shared.searchMovies(searchTerm: searchTerm) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 print("Error in searching", error)
             case.success(let response):
-                self.movies = response.results ?? []
-                self.tableView.reloadData()
+                self?.movies = response.results ?? []
+                self?.tableView.reloadData()
             }
         }
     }

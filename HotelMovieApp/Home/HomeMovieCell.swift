@@ -25,7 +25,13 @@ class HomeMovieCell: UICollectionViewCell {
     var movie: Movie? {
         didSet {
             guard let movie = movie else { return }
-            let urlString = "https://image.tmdb.org/t/p/w500/\(movie.poster_path ?? "")"
+                
+            guard let posterPath = movie.poster_path else {
+                posterImageView.image = UIImage(named: "no-image")
+                return
+            }
+            
+            let urlString = "https://image.tmdb.org/t/p/w500/\(posterPath)"
             posterImageView.loadImageFromCacheOrDownload(urlString: urlString)
         }
     }

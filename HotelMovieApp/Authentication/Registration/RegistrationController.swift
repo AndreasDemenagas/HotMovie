@@ -48,13 +48,13 @@ class RegistrationController: UIViewController, RegisterDelegate {
             let username = try Validator.validateUsername(username)
             let password = try Validator.validatePassoword(password)
             
-            FIRService.shared.registerUser(email: email, username: username, password: password) { (error) in
+            FIRService.shared.registerUser(email: email, username: username, password: password) { [weak self] (error) in
                 if let error = error {
                     print("Registration error ", error)
                     return
                 }
                 
-                self.dismiss(animated: true, completion: nil)
+                self?.dismiss(animated: true, completion: nil)
             }
         }
         
@@ -124,14 +124,3 @@ class RegistrationController: UIViewController, RegisterDelegate {
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
 }
-
-//
-//      FIRService.shared.registerUser(email: email, username: username, password: password) { (error) in
-////            if let error = error {
-////                Alert.shared.unexpectedError(on: self)
-////                print("Register Error, ", error)
-////                return
-////            }
-////
-////            self.dismiss(animated: true, completion: nil)
-////        }

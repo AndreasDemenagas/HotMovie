@@ -12,7 +12,7 @@ Simple iOS application for Hotel Movie Rental Services. Built using Swift, Googl
 
 ## Completed Features 
 
-1. User **sign in & registration*** using Firebase Auth.
+1. User **sign in & registration** using Firebase Auth.
 1. Showing of newly released, top rated, popular and upcoming movies. 
 1. Ability to **search** for any movie. 
 1. Displaying basic **movie info** such as poster, plot outline, release date, rating and more. 
